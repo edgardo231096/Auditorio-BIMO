@@ -626,12 +626,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  height: 280px;
+  height: 345px;
   width: 100%;
   display: table;
   overflow: hidden;
   margin-bottom: 30px;
-  left:10px;     
+  left:10px;
 }
 
 #portfolio .portfolio-item .details {
