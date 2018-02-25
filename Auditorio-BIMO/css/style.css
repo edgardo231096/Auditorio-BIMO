@@ -98,7 +98,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .hero-logo {
   margin-top: 0px;     
-  padding-top: 0px;        
+  padding-top: 0px;     
+} 
+
+.logo{ 
+  position: fixed; 
+  padding-right: 300px;
+  padding-left: 28%;        
 }
 
 #hero .hero-logo img {

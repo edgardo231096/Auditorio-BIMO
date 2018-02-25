@@ -58,7 +58,37 @@
     <div class="hero-container">
       <div class="wow fadeIn">
         <div class="hero-logo">
-          <img class="" src="img/logo2.png" alt="Imperial">
+         <img class="logo" src="img/logo2.png" alt="Imperial">   
+                 <span id="liveclock" style="display: inline;top:0; color: white;"></span><script language="JavaScript" type="text/javascript">
+            <!--
+
+                function show5(){
+                if (!document.layers&&!document.all&&!document.getElementById)
+                    return
+
+                var Digital=new Date()
+                var hours=Digital.getHours()
+                var minutes=Digital.getMinutes()
+                var seconds=Digital.getSeconds()
+                if (minutes<=9)
+                    minutes="0"+minutes
+                    if (seconds<=9)
+                        seconds="0"+seconds
+                            //change font size here to your desire
+                    myclock="<font size='5' face='Arial' >"+hours+":"+minutes+"</b></font>"
+                    if (document.layers){
+                        document.layers.liveclock.document.write(myclock)
+                        document.layers.liveclock.document.close()
+                    }
+                    else if (document.all)
+                        liveclock.innerHTML=myclock
+                    else if (document.getElementById)
+                        document.getElementById("liveclock").innerHTML=myclock
+                        setTimeout("show5()",1000)
+                    }
+                    window.onload=show5
+                //-->
+                </script>  
         </div>
          <h1>Bienvenido</h1>
          <h2>Le ofrecemos <span class="rotating">los mejores eventos, el mejor servicio, la mejor atención</span></h2>
