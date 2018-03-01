@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   background: url(../img/frente.jpg) top center fixed;
   background-size: cover;
   padding-top: 0px;     
-  filter: grayscale(40%);
+  /*filter: grayscale(0%); */ 
 }
 
 #hero .hero-logo {
@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .hero-container {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   display: table-cell;
   margin: 0;
   padding: 0;
@@ -628,6 +628,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #portfolio .portfolio-item {
+    background: rgba(0,0,0,0.6);
+  border: solid 1px white;
+  border-radius: 20px;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -638,6 +641,31 @@ body.mobile-nav-active #mobile-nav-toggle {
   overflow: hidden;
   margin-bottom: 30px;
   left:10px;
+  transition: 0.2s;
+  box-shadow: 10px 8px 20px rgb(100,100,100);
+}
+#portfolio .portfolio-item:active {
+    width: 90%;
+    margin-left: 5%;
+    height: 315px;
+    margin-top: 15px;
+    box-shadow: 4px 4px 10px rgb(160,160,160);
+
+}
+#portfolio .portfolio-item:active > span {
+   font-size: 23px;
+
+}
+#portfolio .portfolio-item img {
+    width: 100%; 
+    padding-top: 50%;
+    filter: invert(120%);
+}
+
+#portfolio .portfolio-item span {
+    font-size: 26px;
+    transition: 0.2s;
+    color: rgb(200,200,200);
 }
 
 #portfolio .portfolio-item .details {
