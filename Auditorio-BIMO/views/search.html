@@ -16,19 +16,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
 <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="../css/animate.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <link href="../css/search.css" rel='stylesheet' type='text/css' />
+<link href="../css/teclado.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="../css/jquery-ui.css" type='text/css' />
 <link rel="stylesheet" href="../css/smoothbox.css" type='text/css' >
 <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
 <!-- //Custom Theme files -->
-<!-- js -->
 <script src="../lib/jquery/jquery.min.js"></script>
-<!-- //js -->
-<!--webfont-->
-<!--<link href='//fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'> --> 
-<!--<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>--> 
-<!-- start-smoth-scrolling -->
 <script src="../lib/fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.min.js"></script>
 <script type="text/javascript" src="../lib/jquery/move-top.js"></script>
 <script type="text/javascript" src="../lib/jquery/easing.js"></script>
@@ -61,7 +57,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<img class="w3l_banner_logo" src="../img/logo2.png" alt="Imperial">  
 					</div>
 					<form action="#" method="post">
-				    <input class="busqueda" type="text" name="No_tarjeta" placeholder="Ingrese su número de tarjeta de credito" required=true>
+				    <input class="busqueda" id="numBox" type="text" name="No_tarjeta" placeholder="Ingrese su número de tarjeta de credito" required=true>
 				    <div class="more">
 						<a href="#" class="hvr-underline-from-center" data-toggle="modal" data-target="#myModal">Buscar</a>
 					</div>
@@ -71,9 +67,34 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				    <br>
 				    Regresar</a>
 				</div>
+
 			</div>
+    <table id="kb_keypad" class="animated infinite bounce">
+        <tr>
+            <td class="kb_key">1</td>
+            <td class="kb_key">2</td>
+            <td class="kb_key">3</td>
+        </tr>
+        <tr>
+            <td class="kb_key">4</td>
+            <td class="kb_key">5</td>
+            <td class="kb_key">6</td>
+        </tr>
+        <tr>
+            <td class="kb_key">7</td>
+            <td class="kb_key">8</td>
+            <td class="kb_key">9</td>
+        </tr>
+        <tr>
+            <td class="kb_btn kb_btn_delete">Borrar</td>
+            <td class="kb_key">0</td>
+            <td class="kb_btn kb_btn_ok">Ok</td>
+        </tr>
+    </table>
 		</div>
+
 	</div>
+
 
 
 
@@ -100,5 +121,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
   document.addEventListener('contextmenu', event => event.preventDefault());  
   </script>
 <!-- //here ends scrolling icon -->
+<script src="../js/teclado.js"></script>
 </body>
 </html>
