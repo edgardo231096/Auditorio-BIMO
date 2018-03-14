@@ -6,14 +6,33 @@ $(document).ready(function(){
         var boxHeight = $(this).height();
         var boxWidth = $(this).width();
         kb.css("left", offset.left + (boxWidth-kb.width())/2);        
-        kb.css("top", offset.top + boxHeight + 5);    
+        //kb.css();    
         var that = $(this);
+
+
+        var kbDisplay = function() {
+            kb.css("top", $(window).height())
+            kb.css("display", "block");
+            kb.animate({
+                "top": offset.top + boxHeight + 10
+            }, 100);
+        }
+
+        var kbHide = function() {
+            kb.animate({
+                "top": $(window).height()
+            },100, function() {
+                kb.css("display", "none");
+            })
+        }
+
+
         var clickHandler = function () {
             var keyVal = this.innerHTML;
             that.val(that.val() + keyVal); 
         };
         var closeEvtHandler = function() {
-            kb.css("display", "none");
+            kbHide();
             $("#kb_keypad .kb_key, #kb_keypad .kb_btn").unbind("click")
         }
 
@@ -23,9 +42,10 @@ $(document).ready(function(){
             );
         }
 
-        kb.is(":visible") ? ( kb.css("display", "none"),$("#kb_keypad .kb_key, #kb_keypad .kb_btn").unbind("click") ) : ( kb.css("display", "block"),$("#kb_keypad .kb_key").click(clickHandler),$(".kb_btn_ok").click(closeEvtHandler),$(".kb_btn_delete").click(deleteEvtHandler) );
 
 
-           
-   });
+
+        kb.is(":visible") ? ( kbHide(),$("#kb_keypad .kb_key, #kb_keypad .kb_btn").unbind("click") ) : ( kbDisplay(),$("#kb_keypad .kb_key").click(clickHandler),$(".kb_btn_ok").click(closeEvtHandler),$(".kb_btn_delete").click(deleteEvtHandler) );
+
+    });
 });
