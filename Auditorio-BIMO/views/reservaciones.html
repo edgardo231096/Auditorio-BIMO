@@ -23,8 +23,25 @@
 
     .wrapper {
       width: 100%;
-    }
-
+    } 
+      
+    #fondo {
+      display: table;
+      width: 100%;
+      height: 100vh;
+      background: url(../img/frente3.jpg) top center fixed;
+      background-size: cover;
+      padding-top: 0px;     
+      filter: grayscale(50%);  
+      overflow-y: scroll;  
+      overflow: hidden; 
+      } 
+     
+    #fondo .hero-container {
+      background: rgba(0, 0, 0, 0.5);
+      display: table-cell;
+      text-align: center;
+    } 
     @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
     *,
     *:before,
@@ -102,7 +119,7 @@
     }
 
     .promo button:hover {
-      background: #27282b;
+      background: #4e8d88; 
     }
 
     .scale button {
@@ -125,36 +142,17 @@
   </style>
 </head>
 
-<body id="hero">
+<body id="fondo">
   <div class="hero-container">
     <div class="wrapper">
       <div data-carousel-3d>
-        <div style="min-width: 320px; min-height: 213px; max-width: 320px;">
-          <div class="promo first">
-            <h4>Basic</h4>
-            <ul class="features">
-              <li class="brief">Basic membership</li>
-              <li class="price">$69</span>
-              </li>
-              <li>Some great feature</li>
-              <li>Another super feature</li>
-              <li>And more...</li>
-              <li class="buy">
-                <button>Sign up</button>
-              </li>
-            </ul>
-          </div>
-
-
-        </div>
-
-        <div style="min-width: 320px; min-height: 213px; max-width: 320px;">
+       
+        <div style="min-width: 360px; min-height: 213px; max-width: 360px;">
           <div class="promo first">
             <h4>Ballet Ruso</h4>
             <ul class="features">
-              <li class="brief">20/08/2017 - 19:00 hrs</li>
-              <li class="price">$402.00 MXN</span>
-              </li>
+              <li class="brief">30/03/2018 - 19:00 hrs</li>
+              <li class="price"><span>$2020.00 MXN</span></li>
             </ul>
             <h5>Asientos:</h5>
             <ul class="features">
@@ -168,19 +166,85 @@
               </li>
             </ul>
           </div>
-
-
         </div>
 
-        <div style="min-width: 320px; min-height: 213px; max-width: 320px; max-height: 213px">
-          <img src="../img/frente.jpg" style="width: 100%" />
-          <div style="background-color:gray; color:white;">Html contents also works ok!!!</div>
+        <div style="min-width: 360px; min-height: 213px; max-width: 360px;">
+          <div class="promo first">
+            <h4>Teo Gonzalez</h4>
+            <ul class="features">
+              <li class="brief">15/04/2018 - 22:00 hrs</li>
+              <li class="price"><span>$800.00 MXN</span></li>
+            </ul>
+            <h5>Asientos:</h5>
+            <ul class="features">
+              <li>* P<strong>14</strong></li>
+              <li>* P<strong>15</strong></li>
+              <li>* P<strong>16</strong></li>
+              <li>* P<strong>17</strong></li>
+              <li class="buy">
+                <button>Imprimir Comprobante</button>
+              </li>
+            </ul>
+          </div>
+        </div> 
+        
+         <div style="min-width: 360px; min-height: 213px; max-width: 360px;">
+          <div class="promo first">
+            <h4>El Rey Leon</h4>
+            <ul class="features">
+              <li class="brief">06/05/2018 - 21:00 hrs</li>
+              <li class="price"><span>$960.00 MXN</span></li>
+            </ul>
+            <h5>Asientos:</h5>
+            <ul class="features">
+              <li>* R<strong>8</strong></li>
+              <li>* R<strong>9</strong></li>
+              <li>* R<strong>10</strong></li>
+              <li class="buy">
+                <button>Imprimir Comprobante</button>
+              </li>
+            </ul>
+          </div>
         </div>
 
+        <div style="min-width: 360px; min-height: 213px; max-width: 360px;">
+          <div class="promo first">
+            <h4>Luis Miguel: Mexico Por Siempre</h4>
+            <ul class="features">
+              <li class="brief">10/06/2018 - 22:00 hrs</li>
+              <li class="price"><span>$3200.00 MXN</span></li>
+            </ul>
+            <h5>Asientos:</h5>
+            <ul class="features">
+              <li>* C<strong>12</strong></li>
+              <li>* C<strong>13</strong></li>
+              <li class="buy">
+                <button>Imprimir Comprobante</button>
+              </li>
+            </ul>
+          </div>
+        </div> 
+        
+         <div style="min-width: 360px; min-height: 213px; max-width: 360px;">
+          <div class="promo first">
+            <h4>Ara Malikian</h4>
+            <ul class="features">
+              <li class="brief">20/07/2018 - 22:00 hrs</li>
+              <li class="price"><span>$330.00 MXN</span></li>
+            </ul>
+            <h5>Asientos:</h5>
+            <ul class="features">
+              <li>* H<strong>6</strong></li>
+              <li class="buy">
+                <button>Imprimir Comprobante</button>
+              </li>
+            </ul>
+          </div>
+        </div>
 
       </div>
     </div>
-    <a href="../index.html" class="btn">
+    <a href="../index.html" class="btn" style="margin-top: 20px; ">
       <i class="fas fa-home fa-4x"></i>
       <br> Regresar</a>
   </div>
