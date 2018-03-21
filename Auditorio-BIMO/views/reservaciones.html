@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="../css/dist/styles/jquery.carousel-3d.default.css">
+  <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
+
+  <!--<script src="http://localhost:35729/livereload.js"></script>-->
+  <script src="../lib/bower_components/jquery/jquery.js"></script>
+  <script src="../lib/bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
+  <script src="../lib/bower_components/waitForImages/dist/jquery.waitforimages.js"></script>
+  <script src="../lib/bower_components/modernizr/modernizr.js"></script>
+  <script src="../css/dist/jquery.carousel-3d.js"></script>
+  <script src="../lib/fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.min.js"></script>
+
+  <style>
+    html,
+    body {
+      margin: 0px;
+    }
+
+    .wrapper {
+      width: 100%;
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+    *,
+    *:before,
+    *:after {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -moz-transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+      -o-transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+      -webkit-transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+      transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    }
+
+    body {
+      background: #f6f8f8;
+      font-size: 100%;
+      padding: 3em 0;
+    }
+
+    .promos {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .promo {
+      padding: .25em 0 2em;
+      background: #0F1012;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      color: #f9f9f9;
+      text-align: center;
+    }
+
+    .promo h4 {
+      margin: .25em 0 0;
+      font-size: 170%;
+      font-weight: normal;
+    }
+
+    .promo .features {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      color: #999999;
+    }
+
+    .promo li {
+      padding: .25em 0;
+    }
+
+    .promo .brief {
+      color: #f9f9f9;
+    }
+
+    .promo .price {
+      margin: .5em 0;
+      padding: .25em 0;
+      background: #292b2e;
+      font-size: 250%;
+      color: #f9f9f9;
+    }
+
+    .promo .buy {
+      margin: 1em 0 0;
+    }
+
+    .promo button {
+      padding: 1em 3.25em;
+      border: none;
+      border-radius: 40px;
+      background: #292b2e;
+      color: #f9f9f9;
+      cursor: pointer;
+    }
+
+    .promo button:hover {
+      background: #27282b;
+    }
+
+    .scale button {
+      background: #64AAA4;
+    }
+
+    .scale button:hover {
+      background: #4e8d88;
+    }
+
+    @media (min-width: 40em) {
+      .scale {
+        transform: scale(1.2);
+        box-shadow: 0 0 4px 1px rgba(20, 20, 20, 0.8);
+      }
+      .scale .price {
+        color: #64AAA4;
+      }
+    }
+  </style>
+</head>
+
+<body id="hero">
+  <div class="hero-container">
+    <div class="wrapper">
+      <div data-carousel-3d>
+        <div style="min-width: 320px; min-height: 213px; max-width: 320px;">
+          <div class="promo first">
+            <h4>Basic</h4>
+            <ul class="features">
+              <li class="brief">Basic membership</li>
+              <li class="price">$69</span>
+              </li>
+              <li>Some great feature</li>
+              <li>Another super feature</li>
+              <li>And more...</li>
+              <li class="buy">
+                <button>Sign up</button>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+        <div style="min-width: 320px; min-height: 213px; max-width: 320px;">
+          <div class="promo first">
+            <h4>Ballet Ruso</h4>
+            <ul class="features">
+              <li class="brief">20/08/2017 - 19:00 hrs</li>
+              <li class="price">$402.00 MXN</span>
+              </li>
+            </ul>
+            <h5>Asientos:</h5>
+            <ul class="features">
+              <li>* L<strong>48</strong></li>
+              <li>* L<strong>49</strong></li>
+              <li>* L<strong>50</strong></li>
+              <li>* L<strong>51</strong></li>
+              <li>* L<strong>52</strong></li>
+              <li class="buy">
+                <button>Imprimir Comprobante</button>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+        <div style="min-width: 320px; min-height: 213px; max-width: 320px; max-height: 213px">
+          <img src="../img/frente.jpg" style="width: 100%" />
+          <div style="background-color:gray; color:white;">Html contents also works ok!!!</div>
+        </div>
+
+
+      </div>
+    </div>
+    <a href="../index.html" class="btn">
+      <i class="fas fa-home fa-4x"></i>
+      <br> Regresar</a>
+  </div>
+  <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());  
+  </script>
+</body>
+
+</html>
