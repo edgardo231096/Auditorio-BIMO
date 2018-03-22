@@ -44,6 +44,28 @@
     this._nextButton = $('<div data-next-button></div>')[0];
     $(this.el).append(this._nextButton);
     $(this._nextButton).click(this.next.bind(this));
+      var coords = {
+      x0: 0,
+      x1: 0
+    };
+    $(".mydraggable").on('touchstart', function(evt) {
+      evt.preventDefault();
+      coords.x0 = evt.originalEvent.changedTouches[0].clientX;
+    })
+
+    $(".mydraggable").on('touchend', evt => {
+      evt.preventDefault();
+      coords.x1 = evt.originalEvent.changedTouches[0].clientX;;
+        console.log(coords,evt)
+      var dx = coords.x1 - coords.x0;
+      if(dx > 0) {
+        console.log("right");
+        this.prev();
+      } else {
+        console.log("left");
+        this.next();
+      }
+    })
 
     this.rotate(currentIndex);
   };
