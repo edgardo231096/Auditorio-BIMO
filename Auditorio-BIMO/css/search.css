@@ -114,6 +114,20 @@ p{
 	float:center;
 }
 
+.encabezado{
+    padding-left: 27%;
+    padding-top: 10px; 
+	float:center;
+} 
+
+.encabezado h1  {
+    font-size:40px;
+    color: #fff;
+    padding-left: 40px; 
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 .navigation {
     padding:1em 0em;
     background:rgba(0, 0, 0, 0.53);
