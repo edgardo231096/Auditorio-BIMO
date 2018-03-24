@@ -139,3 +139,12 @@ p{
   padding-top: 0px;     
   /*filter: grayscale(0%); */ 
 }
+.patrocinador{
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 7%;
+    height: 20px;
+    display: inline-block;
+    float: left;
+    
+}
