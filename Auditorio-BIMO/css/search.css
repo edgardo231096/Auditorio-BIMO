@@ -1004,3 +1004,7 @@ span.menu{
 		margin: 2em 0 1em;
 	}
 }
+
+.tr, .td {
+	font-family: "Open Sans", sans-serif;
+}
