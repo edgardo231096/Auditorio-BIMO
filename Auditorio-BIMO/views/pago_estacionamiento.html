@@ -19,7 +19,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="../css/animate.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 
-<link href="../css/pago_estacionamiento.css" rel='stylesheet' type='text/css'  /> 
+<link href="../css/pagos.css" rel='stylesheet' type='text/css'  /> 
 <link href="../css/teclado.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="../css/jquery-ui.css" type='text/css' />
 <link rel="stylesheet" href="../css/smoothbox.css" type='text/css' >
@@ -43,12 +43,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <body>
 <script src="../lib/jquery/jquery.vide.min.js"></script>
 	<script src="js/jquery.vide.min.js"></script>
-	<div data-vide-bg="../video/parking">
+	<div data-vide-bg="../video/parking2">
 		<div class="center-container">
 			<div class="navigation">
 				<div class="container">
 					<div class="logo">
-						<h1>Aparcamiento</h1>
+						<h1>Pago de Aparcamiento</h1>
 					</div>
 				</div>
 			</div>
@@ -164,7 +164,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
             a("#area .master-card").css("transform", "rotateY(180deg)"), a(".button-sent #back").show()
             flag=false; 
             }else{
-            window.location='parking.html';      
+            //window.location='parking.html';      
             }
         }), a(".button-sent #back").click(function(b) {
             a("#area .master-card").css("transform", "rotateY(0deg)"), a(this).hide()
