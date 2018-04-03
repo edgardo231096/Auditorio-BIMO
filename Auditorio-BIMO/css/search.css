@@ -35,9 +35,8 @@ h1,h2,h3,h4,h5,h6{
   display: inline-block;
   text-decoration: none;
   color: white;    
-  /*margin-bottom: 200px;*/
-  margin-top: 70px;
-  margin-left: 95%;
+  margin-bottom: -90px;
+  margin-left: 80%;
   width: 120px;
   height: 120px;
   line-height: 30px;
@@ -110,7 +109,7 @@ p{
 }
 .logo{
     padding-left: 35%;
-    padding-top: 10px; 
+    padding-top: 25px; 
 	float:center;
 }
 
@@ -1007,4 +1006,22 @@ span.menu{
 
 .tr, .td {
 	font-family: "Open Sans", sans-serif;
+} 
+
+.inferior{
+width: 100px;
+height: 150px; 
+padding-top: 100px;   
+display: inline; 
+} 
+
+#helpbutton {
+    display: inline-block; 
+    filter: invert(100%);
+    bottom: 0;
+    width: 120px;
+    right: 0;
+    margin-top: 90px;
+    margin-left: 5px;
+    transition: 0.1s;
 }

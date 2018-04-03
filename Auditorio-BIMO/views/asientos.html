@@ -12,10 +12,6 @@
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href="../css/asientos.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
-<script src="../lib/bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
-<script src="../lib/bower_components/waitForImages/dist/jquery.waitforimages.js"></script>
-<script src="../lib/bower_components/modernizr/modernizr.js"></script>
-<script src="../lib/fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.min.js"></script>
 <script src="../lib/jquery/jquery.min.js"></script>
 
 </head>
@@ -140,15 +136,26 @@
 	</div>
 </div> 
 
-<a href="eventos.html" class="btn2" id="homeBtn">
+<div class="inferior"> 
+<img id="helpbutton" onclick=""  class="helpbutton" src="../img/helpbtn.png">
+    <a href="eventos.html" class="btn2" id="homeBtn">
             <i class="fas fa-home fa-4x"></i>
             <br/>Regresar
-</a>
+    </a>   
+</div>
+    
+
+  
 <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
 </script>
+<script src="../lib/bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
+<script src="../lib/bower_components/waitForImages/dist/jquery.waitforimages.js"></script>
+<script src="../lib/bower_components/modernizr/modernizr.js"></script>
+<script src="../lib/fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.min.js"></script>
 <script src="../lib/seats/jquery.seat-charts.js"></script>
 <!--<script src="../lib/seats/jquery.nicescroll.js"></script> -->
 <script src="../lib/seats/scripts.js"></script>
 </body>
+
 </html>

@@ -38,7 +38,7 @@ body{
 }  
 
 .logo{
-    padding-left: 30%;
+    padding-left: 33%;
     padding-top: 0px; 
 	float:center;
 }
@@ -52,7 +52,7 @@ body{
 }
 
 #area { 
-  margin-top: 10px; 
+  margin-top: 20px; 
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,7 +117,7 @@ body{
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 5px;
   font-weight: bold;
-  color: white;
+  color: black;
 } 
 
 #area .master-card .card .input-number{
@@ -126,7 +126,7 @@ body{
 
 #area .master-card .card .input-number .title-number {
   font-size: 20px;
-  color: white;
+  color: black;
   margin-top: 300%; 
   padding-top: 15%; 
   padding-left: 38%;
@@ -140,7 +140,7 @@ body{
 }
 #area .master-card .card .input-number .inputs-number input {
   background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: black;
   border: solid 1px white;
   height: 35px;
   width: 80px;
@@ -150,7 +150,9 @@ body{
   margin: 5px;
   font-size: 20px;
   font-weight: bolder; 
-}
+} 
+
+
 #area .master-card .card .selects-date {
   height: 40px;
   margin-top: 10px;
@@ -170,13 +172,13 @@ body{
 #area .master-card .card .selects-date .month-select span, #area .master-card .card .selects-date .year-select span {
   display: block;
   font-size: 20px;
-  color: white;
+  color: black;
   padding-left: 25px; 
   padding-top: 15px; 
 }
 #area .master-card .card .selects-date select {
   background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: black;
   border: solid 1px white;
   width: 70px;
   height: 40px;
@@ -280,7 +282,7 @@ body{
 #area .master-card .card-back .secret-area {
   position: absolute;
   background: rgba(255, 255, 255, 0.2);
-  color: white; 
+  color: black; 
   height: 30px;
   top: 100px;
   left: 20px;
@@ -289,7 +291,7 @@ body{
 }
 #area .master-card .card-back .secret-area input {
   background: transparent;
-  color: white; 
+  color: black; 
   font-size: 20px;
   font-weight: bolder; 
   height: 30px;
@@ -386,9 +388,9 @@ body{
   display: inline-block;
   text-decoration: none;
   color: white;    
-  margin-bottom: 50px;
-  margin-top: 70px;
-  margin-left: 95%;
+  margin-bottom: 55px;
+  margin-top: -115px;
+  margin-left: 88%;
   width: 120px;
   height: 120px;
   line-height: 30px;
@@ -399,6 +401,7 @@ body{
   overflow: hidden;
   font-weight: bold;
   transition: .4s;
+  position: relative; 
 }
 
 .btn svg{
@@ -408,4 +411,22 @@ body{
 .btn:hover {
     background: white;
     color: dodgerblue;
+} 
+
+.inferior{
+width: 100px;
+height: 150px; 
+padding-top: 100px;   
+display: inline; 
+} 
+
+#helpbutton {
+    display: inline-block; 
+    filter: invert(100%);
+    bottom: 0;
+    width: 120px;
+    right: 0;
+    margin-top: 130px;
+    margin-left: 20px;
+    transition: 0.1s;
 }
