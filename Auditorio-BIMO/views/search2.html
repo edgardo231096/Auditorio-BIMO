@@ -14,6 +14,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
 <link href="../css/search.css" rel='stylesheet' type='text/css' />
 <link href="../css/teclado.css" rel='stylesheet' type='text/css' />
+<link href="../css/enjoyhint.css" rel="stylesheet"> 
 <link rel="stylesheet" href="../css/jquery-ui.css" type='text/css' />
 <link rel="stylesheet" href="../css/smoothbox.css" type='text/css' >
 <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
@@ -60,7 +61,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div> 
 				
 				<div class="inferior"> 
-                        <img id="helpbutton" onclick=""  class="helpbutton" src="../img/helpbtn.png">
+                        <img id="helpbutton" onclick="ayuda_search()"  class="helpbutton" src="../img/helpbtn.png">
+                        <audio id="audio" src="../audio/search.mp3" ></audio>
                         <a href="../index.html" class="btn" id="homeBtn">
                         <i class="fas fa-home fa-4x"></i>
                         <br/>Regresar
@@ -120,6 +122,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
   document.addEventListener('contextmenu', event => event.preventDefault());  
   </script>
 <!-- //here ends scrolling icon -->
+<script src="../js/main.js"></script> 
+<script src="../js/enjoyhint.min.js"></script>
 <script src="../js/teclado.js"></script>
 </body>
 </html>

@@ -29,6 +29,26 @@ nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
 
+::-webkit-scrollbar {
+display: none;
+} 
+
+.tootltip_button {
+	color: black;
+	border: solid 1px gray;
+	background-color: white;
+	width: auto;
+	height: auto;
+	padding: 20px;
+}
+
+
+.tootltip_button:hover {
+	background-color: rgb(220,220,220);
+	color: black;
+}
+
+
 body{
 	padding:0;
 	margin:0;
@@ -39,7 +59,7 @@ body{
     -ms-background-size: cover;
     -moz-background-size: cover;
 	font-family: 'Open Sans', sans-serif !important;
-    overflow-y: scroll;  
+    overflow-y: hidden;  
     overflow: hidden; 
 }
 
@@ -227,7 +247,7 @@ span.seatCharts-legendDescription {
     width: 70%;
 	}
 .scrollbar {
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 .booking-details p i {
     color: #000;
