@@ -4,34 +4,42 @@ CREATE DATABASE BIMO;
 
 USE BIMO; 
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asiento`
+--
 
 
 
 CREATE TABLE `asiento` (
   `num_asiento` varchar(5) NOT NULL,
-  `folio` int(11) NOT NULL,
-  `fecha` date NOT NULL,
-  `hora` time NOT NULL,
-  `no_tarjeta` varchar(16) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `asiento_funcion`
---
-
-
-
-CREATE TABLE `asiento_funcion` (
-  `num_asiento` varchar(5) NOT NULL,
-  `folio` int(11) NOT NULL,
+ `seccion` int(11) NOT NULL, `folio` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `hora` time NOT NULL,
   `precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asiento_titular`
+--
+
+
+
+
+
+
+CREATE TABLE `asiento_titular` (
+  `num_asiento` varchar(5) NOT NULL,
+ `seccion` int(11) NOT NULL, `folio` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `hora` time NOT NULL,
+  `no_tarjeta` varchar(16) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -158,16 +166,16 @@ CREATE TABLE `titular` (
 --
 
 
-ALTER TABLE `asiento`
-  ADD PRIMARY KEY (`num_asiento`,`folio`,`fecha`,`hora`,`no_tarjeta`),
+ALTER TABLE `asiento_titular`
+  ADD PRIMARY KEY (`num_asiento`,`seccion`,`folio`,`fecha`,`hora`,`no_tarjeta`),
   ADD KEY `folio` (`folio`,`fecha`,`hora`),
   ADD KEY `no_tarjeta` (`no_tarjeta`);
 
 --
--- Indices de la tabla `asiento_funcion`
+-- Indices de la tabla `asiento`
 --
-ALTER TABLE `asiento_funcion`
-  ADD PRIMARY KEY (`num_asiento`,`folio`,`fecha`,`hora`),
+ALTER TABLE `asiento`
+  ADD PRIMARY KEY (`num_asiento`,`seccion`,`folio`,`fecha`,`hora`),
   ADD KEY `folio` (`folio`,`fecha`,`hora`);
 
 --
@@ -227,9 +235,9 @@ ALTER TABLE `titular`
 ALTER TABLE `asiento`
   MODIFY `folio` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `asiento_funcion`
+-- AUTO_INCREMENT de la tabla `asiento_titular`
 --
-ALTER TABLE `asiento_funcion`
+ALTER TABLE `asiento_titular`
   MODIFY `folio` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `estacionamiento`
@@ -266,18 +274,17 @@ ALTER TABLE `promocion_titular`
 --
 
 --
+-- Filtros para la tabla `asiento_titular`
+--
+ALTER TABLE `asiento_titular`
+  ADD CONSTRAINT `asiento_titular_ibfk_1` FOREIGN KEY (`num_asiento`,`seccion`,`folio`,`fecha`,`hora`) REFERENCES `asiento` (`num_asiento`,`seccion`,`folio`, `fecha`, `hora`),
+  ADD CONSTRAINT `asiento_titular_ibfk_2` FOREIGN KEY (`no_tarjeta`) REFERENCES `titular` (`no_tarjeta`);
+
+--
 -- Filtros para la tabla `asiento`
 --
 ALTER TABLE `asiento`
-  ADD CONSTRAINT `asiento_ibfk_1` FOREIGN KEY (`folio`,`fecha`,`hora`) REFERENCES `funcion` (`folio`, `fecha`, `hora`),
-  ADD CONSTRAINT `asiento_ibfk_2` FOREIGN KEY (`no_tarjeta`) REFERENCES `titular` (`no_tarjeta`);
-
---
--- Filtros para la tabla `asiento_funcion`
---
-ALTER TABLE `asiento_funcion`
-  ADD CONSTRAINT `asiento_funcion_ibfk_1` FOREIGN KEY (`folio`,`fecha`,`hora`) REFERENCES `funcion` (`folio`, `fecha`, `hora`),
-  ADD CONSTRAINT `asiento_funcion_ibfk_2` FOREIGN KEY (`num_asiento`) REFERENCES `asiento` (`num_asiento`);
+  ADD CONSTRAINT `asiento_ibfk_1` FOREIGN KEY (`folio`,`fecha`,`hora`) REFERENCES `funcion` (`folio`, `fecha`, `hora`); 
 
 --
 -- Filtros para la tabla `estacionamiento`
