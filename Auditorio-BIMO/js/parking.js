@@ -20,7 +20,10 @@ $(document).ready(function() {
 
         //c3
         for(var i = 0 ; i < 6; i++) {
-            var cajonHTML = $("<div class='cajon cajonVertical cajonDisp' id='cajon"+c+"'>");
+            if(i < 3)
+                var cajonHTML = $("<div class='cajon cajonVertical cajonDisp' id='cajon"+c+"'>");
+            else
+                var cajonHTML = $("<div class='cajon cajonVertical cajonNoDisp' id='cajon"+c+"'>");
             cajonHTML.html(c);
             $(".c3").append(cajonHTML);
             c++;
@@ -67,8 +70,13 @@ $(document).ready(function() {
             c++;
         }
 
+        $('.cajonDisp').click(function() {
+            $('.cajon').removeClass('cajonSelected');
+            $(this).addClass('cajonSelected');
+            $("#selectedCajon").text($(this).text());
+        });
+
     }
 
     init();
-    $("#cajon33").addClass('cajonSelected');
 });
