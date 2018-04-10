@@ -306,24 +306,35 @@ progress[id="progress3"]::-webkit-progress-value {
     max = progress.max;
 
     // aumenta progresivamente el valor del meter
-      
+    var loading = false;
     function functionProgress3(i, x) {
-         console.log(i)
+        if(!loading){
+          // actualizo
+          function decrementar(i) {
+            console.log("Counting", i);
+            progress.value = i;
+            if (i >= max){
+                console.log("i->",i," max->",max);
+                $('#progress3').hide();  
+                loading = false;
+            }
+              if(i < max)
+              setTimeout(function() { decrementar(i + 1) }, TIME);
+          }
+
          $('#progress3').show();  
-         $(x).hide(); 
-        // decremento el valor de i al minimo
-        
-        if (i >= max){
-            console.log("i->",i," max->",max);
-            $('#progress3').hide();  
+          loading = true;
+          $(x).hide(); 
+          decrementar(0);
         }
+          // decremento el valor de i al minimo
+          
+          
            
             
 
-        // actualizo
-            progress.value = i;
-            if(i < max)
-            console.log(setTimeout("functionProgress3(" + (i + 1) + ")", TIME));
+        
+            
             
         
     }  
