@@ -44,11 +44,11 @@
     outline: solid 1px black;
 }
 
-.cajonDisp{
+.cajonDisp, .cajonDispDemo{
     background-color: rgb(96, 240, 96);
 }
 
-.cajonNoDisp{
+.cajonNoDisp, .cajonNoDispDemo{
     background-color: rgb(236, 21, 21);
 }
 
@@ -130,7 +130,7 @@
 
 .cajonDisp:active {
     cursor: pointer;
-    background-color: rgb(56, 210, 56);
+    background-color: dodgerblue;
 }
 
 .cajon > svg {
@@ -211,4 +211,8 @@
 
 .parkingSelected a::before {
     z-index: 1;
+}
+
+.cajonSelected:hover {
+    background-color: dodgerblue;
 }
