@@ -15,6 +15,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
 <link href="../css/search.css" rel='stylesheet' type='text/css' />
 <link href="../css/teclado.css" rel='stylesheet' type='text/css' />
+<link href="../css/enjoyhint.css" rel="stylesheet"> 
 <link rel="stylesheet" href="../css/jquery-ui.css" type='text/css' />
 <link rel="stylesheet" href="../css/smoothbox.css" type='text/css' >
 <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
@@ -68,28 +69,28 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                     <td>clientes Banamex</td>
                     <td>28/03/2018</td>
                    <td> <a href="eventos.html" class="square_btn">Aplicar</a></td>
-                  </tr>
-
-                  <tr>
-                   <td>40% de descuento en una entrada para la funcion del ballet ruso</td>
+                  </tr> 
+                  
+                   <tr>
+                    <td>40% de descuento en una entrada para la funcion del ballet ruso</td>
                     <td>clientes Banamex</td>
                     <td>28/03/2018</td>
                    <td> <a href="eventos.html" class="square_btn">Aplicar</a></td>
                   </tr>
 
-                  <tr>
-                    <td>40% de descuento en una entrada para la funcion del ballet ruso</td>
-                    <td>clientes Banamex</td>
-                    <td>28/03/2018</td>
-                    <td> <a href="eventos.html" class="square_btn">Aplicar</a></td>
-                  </tr>
             </table>
              
-				    <a href="../index.html" class="btn"><i class="fas fa-home fa-4x"></i>
-				    <br>
-				    Regresar</a>
+				    
         </div> 
         
+        <div class="inferior"> 
+                        <img id="helpbutton" onclick="ayuda_aplicar()"  class="helpbutton"  style="margin-top: 150px;" src="../img/helpbtn.png">
+                        <audio id="audio" src="../audio/aplicar.mp3" ></audio>
+                        <a href="../index.html" class="btn" style="margin-top: 70px;" id="homeBtn">
+                        <i class="fas fa-home fa-4x"></i>
+                        <br/>Regresar
+                        </a>   
+                </div> 
 
 			</div>
 		</div>
@@ -122,6 +123,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
   document.addEventListener('contextmenu', event => event.preventDefault());  
   </script>
 <!-- //here ends scrolling icon -->
+<script src="../js/main.js"></script> 
+<script src="../js/enjoyhint.min.js"></script>
 <script src="../js/teclado.js"></script>
 </body>
 </html>

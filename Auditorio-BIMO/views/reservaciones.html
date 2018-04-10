@@ -138,7 +138,41 @@
       .scale .price {
         color: #64AAA4;
       }
-    }
+    } 
+      
+ p[id^="pProgress"] {
+  font-size: 12px !important;
+  font-weight: bold;
+  display: inline;
+  margin: 50%;
+  padding: 0 0 0 10px;
+  color: #a00;
+}
+progress[id="progress3"] {
+  display: none;
+  -webkit-appearance: none;
+  width: 90%; 
+  height: 10px;  
+  margin-left: 2%; 
+  margin-top: 10px;
+}
+
+progress[id="progress3"]::-webkit-progress-bar {
+  background: black;
+  border-radius: 50px;
+  padding: 2px;
+}
+progress[id="progress3"]::-moz-progress-bar {
+  background: black;
+  border-radius: 50px;
+  padding: 2px;
+}
+
+progress[id="progress3"]::-webkit-progress-value {
+  border-radius: 50px;
+  background: dodgerblue;
+}
+
   </style>
 </head>
 
@@ -148,95 +182,105 @@
       <div data-carousel-3d>
        
         <div style="min-width: 360px; min-height: 213px; max-width: 360px;">
-          <div class="promo first mydraggable">
-            <h4>El Lago de los Cisnes</h4>
-            <ul class="features">
+          <div class="promo first">
+            <h4 class="mydraggable">El Lago de los Cisnes</h4>
+            <ul class="features mydraggable">
               <li class="brief">30/03/2018 - 19:00 hrs</li>
               <li class="price"><span>$400.00 MXN</span></li>
             </ul>
-            <h5>Asientos:</h5>
+            <h5 class="mydraggable">Asientos:</h5>
             <ul class="features">
-              <li>* L<strong>48</strong></li>
+             <div class="mydraggable"> 
+             <li>* L<strong>48</strong></li>
               <li>* L<strong>49</strong></li>
               <li>* L<strong>50</strong></li>
               <li>* L<strong>51</strong></li>
               <li>* L<strong>52</strong></li>
+             </div>
               <li class="buy">
-                <button>Imprimir Comprobante</button>
+                <button id="boton" onclick='functionProgress3(0,this);'>Imprimir Comprobante</button>
               </li>
             </ul>
           </div>
         </div>
 
         <div style="min-width: 360px; min-height: 213px; max-width: 360px;">
-          <div class="promo first mydraggable">
-            <h4>2 comediantes con "Madre"</h4>
-            <ul class="features">
+          <div class="promo first">
+            <h4 class="mydraggable">2 comediantes con "Madre"</h4>
+            <ul class="features mydraggable">
               <li class="brief">15/04/2018 - 22:00 hrs</li>
               <li class="price"><span>$800.00 MXN</span></li>
             </ul>
-            <h5>Asientos:</h5>
+            <h5 class="mydraggable">Asientos:</h5>
             <ul class="features">
+             <div class="mydraggable"> 
               <li>* P<strong>14</strong></li>
               <li>* P<strong>15</strong></li>
               <li>* P<strong>16</strong></li>
               <li>* P<strong>17</strong></li>
+              </div>
               <li class="buy">
-                <button>Imprimir Comprobante</button>
+                <button id="boton" onclick='functionProgress3(0,this);'>Imprimir Comprobante</button>
               </li>
             </ul>
           </div>
         </div> 
         
          <div style="min-width: 360px; min-height: 213px; max-width: 360px;">
-          <div class="promo first mydraggable">
-            <h4>El Rey Leon</h4>
-            <ul class="features">
+          <div class="promo first">
+            <h4 class="mydraggable">El Rey Leon</h4>
+            <ul class="features mydraggable">
               <li class="brief">06/05/2018 - 21:00 hrs</li>
               <li class="price"><span>$900.00 MXN</span></li>
             </ul>
-            <h5>Asientos:</h5>
+            <h5 class="mydraggable">Asientos:</h5>
             <ul class="features">
+             <div class="mydraggable"> 
               <li>* R<strong>8</strong></li>
               <li>* R<strong>9</strong></li>
               <li>* R<strong>10</strong></li>
+              </div>
               <li class="buy">
-                <button>Imprimir Comprobante</button>
+                <button id="boton" onclick='functionProgress3(0,this);'>Imprimir Comprobante</button>
               </li>
             </ul>
           </div>
         </div>
 
         <div style="min-width: 360px; min-height: 213px; max-width: 360px;">
-          <div class="promo first mydraggable">
-            <h4>Luis Miguel: Mexico Por Siempre</h4>
-            <ul class="features">
+          <div class="promo first">
+            <h4 class="mydraggable">Luis Miguel: Mexico Por Siempre</h4>
+            <ul class="features mydraggable">
               <li class="brief">10/06/2018 - 22:00 hrs</li>
               <li class="price"><span>$3,000.00 MXN</span></li>
             </ul>
-            <h5>Asientos:</h5>
+            <h5 class="mydraggable">Asientos:</h5>
             <ul class="features">
+             <div class="mydraggable"> 
               <li>* C<strong>12</strong></li>
               <li>* C<strong>13</strong></li>
+              </div>
               <li class="buy">
-                <button>Imprimir Comprobante</button>
+                <button id="boton" onclick='functionProgress3(0,this);'>Imprimir Comprobante</button>
               </li>
             </ul>
           </div>
         </div> 
         
          <div style="min-width: 360px; min-height: 213px; max-width: 360px;">
-          <div class="promo first mydraggable">
-            <h4>Ara Malikian</h4>
-            <ul class="features">
+          <div class="promo first">
+            <h4 class="mydraggable">Ara Malikian</h4>
+            <ul class="features mydraggable">
               <li class="brief">20/07/2018 - 22:00 hrs</li>
               <li class="price"><span>$200.00 MXN</span></li>
             </ul>
-            <h5>Asientos:</h5>
+            <h5 class="mydraggable">Asientos:</h5>
             <ul class="features">
+             <div class="mydraggable"> 
               <li>* H<strong>6</strong></li>
+              </div>
               <li class="buy">
-                <button>Imprimir Comprobante</button>
+                <button id="boton" onclick='functionProgress3(0,this);'>Imprimir Comprobante</button>
               </li>
             </ul>
           </div>
@@ -244,10 +288,46 @@
 
       </div>
     </div>
+     <progress id='progress3' max='100' value='0'></progress>
     <a href="../index.html" class="btn" style="margin-top: 20px; ">
       <i class="fas fa-home fa-4x"></i>
       <br> Regresar</a>
   </div>
+  
+  <script> 
+       // tiempo de actualizacion del progress
+    TIME = 60;
+
+    // tag progress y el parrafo
+    
+    progress = document.getElementById("progress3");
+    
+    // obtengo el valor maximo
+    max = progress.max;
+
+    // aumenta progresivamente el valor del meter
+      
+    function functionProgress3(i, x) {
+         console.log(i)
+         $('#progress3').show();  
+         $(x).hide(); 
+        // decremento el valor de i al minimo
+        
+        if (i >= max){
+            console.log("i->",i," max->",max);
+            $('#progress3').hide();  
+        }
+           
+            
+
+        // actualizo
+            progress.value = i;
+            if(i < max)
+            console.log(setTimeout("functionProgress3(" + (i + 1) + ")", TIME));
+            
+        
+    }  
+  </script>
   <script>
     document.addEventListener('contextmenu', event => event.preventDefault());  
   </script>

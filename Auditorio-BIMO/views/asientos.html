@@ -8,15 +8,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <meta name="keywords" content="Movie Ticket Booking Widget Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <!-- //for-mobile-apps -->
-<link href='//fonts.googleapis.com/css?family=Kotta+One' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!--<link href='//fonts.googleapis.com/css?family=Kotta+One' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'> --> 
 <link href="../css/asientos.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
-<script src="../lib/bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
-<script src="../lib/bower_components/waitForImages/dist/jquery.waitforimages.js"></script>
-<script src="../lib/bower_components/modernizr/modernizr.js"></script>
-<script src="../lib/fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.min.js"></script>
+<link href="../css/enjoyhint.css" rel="stylesheet">
 <script src="../lib/jquery/jquery.min.js"></script>
+
 
 </head>
 <body>
@@ -42,10 +40,10 @@
 					<li>: <b><i>$</i><span id="total">0</span></b></li>
 				</ul>
 				<div class="clear"></div>
-				<ul id="selected-seats" class="scrollbar scrollbar1"></ul>
+				<ul id="selected-seats" class="scrollbar"></ul>
 			
 						
-				<button class="checkout-button">Reservar</button>	
+				<a href="pago_boletos.html"><button class="checkout-button">Reservar</button></a>
 				<div id="legend"></div>
 			</div>
 			<div style="clear:both"></div>
@@ -140,15 +138,29 @@
 	</div>
 </div> 
 
-<a href="eventos.html" class="btn2" id="homeBtn">
+<div class="inferior"> 
+<img id="helpbutton" onclick="ayuda_asientos()"  class="helpbutton" src="../img/helpbtn.png">
+<audio id="audio" src="../audio/asientos.mp3" ></audio>
+    <a href="eventos.html" class="btn2" id="homeBtn">
             <i class="fas fa-home fa-4x"></i>
             <br/>Regresar
-</a>
+    </a>   
+</div>
+    
+
+  
 <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
 </script>
+<script src="../js/main.js"></script> 
+ <script src="../js/enjoyhint.min.js"></script>
+<script src="../lib/bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
+<script src="../lib/bower_components/waitForImages/dist/jquery.waitforimages.js"></script>
+<script src="../lib/bower_components/modernizr/modernizr.js"></script>
+<script src="../lib/fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.min.js"></script>
 <script src="../lib/seats/jquery.seat-charts.js"></script>
 <!--<script src="../lib/seats/jquery.nicescroll.js"></script> -->
 <script src="../lib/seats/scripts.js"></script>
 </body>
+
 </html>

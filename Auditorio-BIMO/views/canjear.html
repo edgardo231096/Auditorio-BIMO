@@ -21,6 +21,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="../css/search.css" rel='stylesheet' type='text/css' />
 <link href="../css/promociones.css" rel='stylesheet' type='text/css'  /> 
 <link href="../css/teclado.css" rel='stylesheet' type='text/css' />
+<link href="../css/enjoyhint.css" rel="stylesheet"> 
 <link rel="stylesheet" href="../css/jquery-ui.css" type='text/css' />
 <link rel="stylesheet" href="../css/smoothbox.css" type='text/css' >
 <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
@@ -63,7 +64,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
   <i class="fa fa-exclamation-triangle"></i>
   <p id="card-error">Card error</p>
 </div>
-<div id="form-container">
+<div id="form-container" class="form-container">
 
   <div id="card-front">
     <div id="shadow"></div>
@@ -77,7 +78,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
     <label for="card-number">
         No. tarjeta
       </label>
-    <input type="text" id="card-number" placeholder="Ingrese su número de tarjeta" maxlength="16">
+    <input type="text" id="card-number"  placeholder="Ingrese su número de tarjeta" maxlength="16">
     <!--- end card holder container --->
     <div id="exp-container">
       <label for="card-exp">
@@ -110,12 +111,17 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </div>
 <!--- end form container --->
 				    
-				    <a href="../index.html" class="btn" style="margin-top: 145px;"><i class="fas fa-home fa-4x"></i>
-				    <br>
-				    Regresar</a>
-				</div>
-
 			</div>
+			
+			<div class="inferior"> 
+                        <img id="helpbutton" onclick="ayuda_canjear()"  class="helpbutton" src="../img/helpbtn.png">
+                        <audio id="audio" src="../audio/canjear.mp3" ></audio>
+                        <a href="../index.html" class="btn" id="homeBtn">
+                        <i class="fas fa-home fa-4x"></i>
+                        <br/>Regresar
+                        </a>   
+                </div> 
+                
     <table id="kb_keypad" class="animated infinite bounce">
         <tr>
             <td class="kb_key">1</td>
@@ -168,6 +174,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
   document.addEventListener('contextmenu', event => event.preventDefault());  
   </script>
 <!-- //here ends scrolling icon -->
+<script src="../js/main.js"></script> 
+<script src="../js/enjoyhint.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script src="https://use.fontawesome.com/f1e0bf0cbc.js"></script>

@@ -4,6 +4,10 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+::-webkit-scrollbar {
+display: none;
+}  
+
 body{
 	margin:0;
 	padding:0;
@@ -11,6 +15,7 @@ body{
 	font-family: 'Open Sans', sans-serif;
     overflow: hidden; 
     height: 100%; 
+    position: absolute; 
  }
 h1,h2,h3,h4,h5,h6{
 	margin:0;	
@@ -35,9 +40,8 @@ h1,h2,h3,h4,h5,h6{
   display: inline-block;
   text-decoration: none;
   color: white;    
-  /*margin-bottom: 200px;*/
-  margin-top: 70px;
-  margin-left: 95%;
+  margin-bottom: -90px;
+  margin-left: 80%;
   width: 120px;
   height: 120px;
   line-height: 30px;
@@ -110,7 +114,7 @@ p{
 }
 .logo{
     padding-left: 35%;
-    padding-top: 10px; 
+    padding-top: 25px; 
 	float:center;
 }
 
@@ -1007,4 +1011,22 @@ span.menu{
 
 .tr, .td {
 	font-family: "Open Sans", sans-serif;
+} 
+
+.inferior{
+width: 100px;
+height: 150px; 
+padding-top: 100px;   
+display: inline; 
+} 
+
+#helpbutton {
+    display: inline-block; 
+    filter: invert(100%);
+    bottom: 0;
+    width: 120px;
+    right: 0;
+    margin-top: 90px;
+    margin-left: 5px;
+    transition: 0.1s;
 }

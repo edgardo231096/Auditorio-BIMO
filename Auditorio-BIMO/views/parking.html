@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="../css/parking.css">
   <link rel="stylesheet" href="../css/search.css">
+  <link href="../css/enjoyhint.css" rel="stylesheet"> 
   <!--<script src="http://localhost:35729/livereload.js"></script>-->
   <script src="../lib/bower_components/jquery/jquery.js"></script>
   <script src="../lib/bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
@@ -67,7 +68,9 @@
       <div class="column column0">
           <div class="subcolumn0 c2">
           </div>        
-      </div>
+      </div> 
+      <img id="helpbutton" onclick="ayuda_parking()"  class="helpbutton"  style="display: inline-block; width: 120px; margin-top: -100%; margin-left: 106%;  margin-bottom: 400px; position: relative;" src="../img/helpbtn.png">
+      <audio id="audio" src="../audio/parking.mp3" ></audio>
     </div>
     <div class="parkingInfo">
       <div class="parkingColors">
@@ -88,19 +91,21 @@
         <h2>Cajón seleccionado:</h2>
         <span id="selectedCajon">--</span>
         <div class="more">
-          <a href="" class="hvr-underline-from-center">Reservar</a>
+          <a href="pago_estacionamiento.html" class="hvr-underline-from-center">Reservar</a>
         </div>
       </div>
     </div>
-    <a href="../index.html" class="btn" id="homeBtn">
-      <i class="fas fa-home fa-4x"></i>
-      <br/>
-      Regresar
-    </a>
+   
+            <a href="../index.html" class="btn" id="homeBtn">
+                <i class="fas fa-home fa-4x"></i>
+                <br/>Regresar
+            </a>   
   </div>
   <script>
     document.addEventListener('contextmenu', event => event.preventDefault());  
   </script>
+  <script src="../js/main.js"></script> 
+  <script src="../js/enjoyhint.min.js"></script>
   <script src="../js/parking.js"></script>
 </body>
 

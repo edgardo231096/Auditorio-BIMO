@@ -29,6 +29,26 @@ nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
 
+::-webkit-scrollbar {
+display: none;
+} 
+
+.tootltip_button {
+	color: black;
+	border: solid 1px gray;
+	background-color: white;
+	width: auto;
+	height: auto;
+	padding: 20px;
+}
+
+
+.tootltip_button:hover {
+	background-color: rgb(220,220,220);
+	color: black;
+}
+
+
 body{
 	padding:0;
 	margin:0;
@@ -39,7 +59,7 @@ body{
     -ms-background-size: cover;
     -moz-background-size: cover;
 	font-family: 'Open Sans', sans-serif !important;
-    overflow-y: scroll;  
+    overflow-y: hidden;  
     overflow: hidden; 
 }
 
@@ -60,6 +80,7 @@ label{
 /*-- main --*/
 .content{
 	padding:50px 0;
+    margin-top: 10px; 
 }
 .content h1{
     color: #fff;
@@ -226,7 +247,7 @@ span.seatCharts-legendDescription {
     width: 70%;
 	}
 .scrollbar {
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 .booking-details p i {
     color: #000;
@@ -489,9 +510,9 @@ ul.book-right li {
     text-decoration: none;
     color: white;
     margin-bottom: 10px;
-    margin-left: 90%;
-    width: 120px;
-    height: 120px;
+    margin-left: 1200%;
+    width: 110px;
+    height: 110px;
     line-height: 30px;
     border-radius: 50%;
     border: solid 7px white;
@@ -501,6 +522,7 @@ ul.book-right li {
     font-weight: bold;
     transition: .4s;
     text-align: center;
+    margin-top: -130%;  
 }
 
 
@@ -512,4 +534,20 @@ ul.book-right li {
 .btn2:hover {
     background: white;
     color: dodgerblue;
+} 
+
+.inferior{
+width: 100px;
+padding-top: 10px;     
+} 
+
+#helpbutton {
+    display: inline-block; 
+    filter: invert(100%);
+    bottom: 0;
+    width: 300px;
+    right: 0;
+    margin-bottom: 0px;
+    margin-left: 100px;
+    transition: 0.1s;
 }

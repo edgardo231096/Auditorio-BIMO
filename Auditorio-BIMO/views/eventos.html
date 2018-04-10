@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <title>Eventos</title>
+    <link rel="stylesheet" href="../css/mainstyles.css">
     <link rel="stylesheet" href="../css/dist/styles/jquery.carousel-3d.default.css">
     <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/mainstyles.css">
-
+    <link href="../css/enjoyhint.css" rel="stylesheet"> 
+    
     <!--<script src="http://localhost:35729/livereload.js"></script>-->
     <script src="../lib/bower_components/jquery/jquery.js"></script>
     <script src="../lib/bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
@@ -277,13 +278,19 @@
                 </div>
                 
             </div>
-        </div>
+        </div> 
+         <img id="helpbutton" onclick="ayuda_eventos()"  class="helpbutton" src="../img/helpbtn.png">
+         <audio id="audio" src="../audio/eventos.mp3" ></audio>
         <a href="../index.html" class="btn"><i class="fas fa-home fa-4x"></i><br> Regresar</a>
+    
     </div>
     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
 
     </script>
-</body>
+</body> 
+
+<script src="../js/main.js"></script> 
+<script src="../js/enjoyhint.min.js"></script>
 
 </html>
