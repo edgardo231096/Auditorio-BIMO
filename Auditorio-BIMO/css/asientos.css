@@ -26,7 +26,7 @@ a{text-decoration:none;}
 .vertical-top{	vertical-align:top;}/* vertical align top */
 nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
-img{max-width:100%;}
+/*img{max-width:100%;} */ 
 /*end reset*/
 
 ::-webkit-scrollbar {
@@ -61,6 +61,7 @@ body{
 	font-family: 'Open Sans', sans-serif !important;
     overflow-y: hidden;  
     overflow: hidden; 
+    height: 100%; 
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -509,7 +510,7 @@ ul.book-right li {
     display: inline-block;
     text-decoration: none;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     margin-left: 1200%;
     width: 110px;
     height: 110px;
@@ -522,7 +523,7 @@ ul.book-right li {
     font-weight: bold;
     transition: .4s;
     text-align: center;
-    margin-top: -130%;  
+    margin-top: -150%;  
 }
 
 
@@ -547,7 +548,8 @@ padding-top: 10px;
     bottom: 0;
     width: 300px;
     right: 0;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
+    bottom: 10px; 
     margin-left: 100px;
     transition: 0.1s;
 }
