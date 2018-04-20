@@ -21,24 +21,24 @@
 <body>
 <div class="content">
 	<div class="main">
-		<h2>Sección #1</h2>
+		<h2 id="seccion"></h2>
 		<div class="demo">
 			<div id="seat-map">
 				<div class="front">Escenario</div>					
 			</div>
 			<div class="booking-details">
 				<ul class="book-left">
-					<li>Evento </li>
-					<li>Fecha</li>
-					<li>Tickets</li>
-					<li>Total</li>
+					<li>Evento: </li>
+					<li>Fecha: </li>
+					<li>Tickets: </li>
+					<li>Total: </li>
 					<li>Asientos :</li>
 				</ul>
 				<ul class="book-right">
-					<li>: El Lago de los Cisnes</li>
-					<li>: 30/03/2018, 20:00 hrs</li>
-					<li>: <span id="counter">0</span></li>
-					<li>: <b><i>$</i><span id="total">0</span></b></li>
+					<li id="titulo"></li>
+					<li id="fecha"></li>
+					<li> <span id="counter">0</span></li>
+					<li> <b><i>$</i><span id="total">0</span></b></li>
 				</ul>
 				<div class="clear"></div>
 				<ul id="selected-seats" class="scrollbar"></ul>
@@ -152,6 +152,19 @@
   
 <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+<script> 
+     var url = new URL(window.location.href);
+     var id = url.searchParams.get("id");
+     var titulo = url.searchParams.get("titulo");
+     var fecha = url.searchParams.get("fecha");
+     var hora = url.searchParams.get("hora");   
+     var seccion = url.searchParams.get("seccion");  
+     document.getElementById("seccion").innerHTML = "Seccion: "+seccion+"";
+     titulo.replace("%20"," ")
+     document.getElementById("titulo").innerHTML = titulo;
+    document.getElementById("fecha").innerHTML = fecha+", "+hora+" hrs";
+    
 </script>
 <script src="../js/main.js"></script> 
  <script src="../js/enjoyhint.min.js"></script>

@@ -22,21 +22,21 @@
                 ESCENARIO
 
             </div>
-            <div class="area1" onclick="javascript:location.href='asientos.html'">
-                A1
+            <div class="area1" onclick="direccion('A1')">
+                <p id="A1">A1</p>
             </div>
-            <div class="area1" onclick="javascript:location.href='asientos.html'">
-                A2
+            <div class="area1" onclick="direccion('A2')">
+                <p id="A2">A2</p>
             </div>
-            <div class="area1" onclick="javascript:location.href='asientos.html'">
-                A3
+            <div class="area1" onclick="direccion('A3')">
+                <p id="A3">A3</p>
             </div>
             <br>
-            <div class="area2" onclick="javascript:location.href='asientos.html'">
-                B1
+            <div class="area2" onclick="direccion('B1')">
+                <p id="B1">B1</p>
             </div>
-            <div class="area2" onclick="javascript:location.href='asientos.html'">
-                B2
+            <div class="area2" onclick="direccion('B2')">
+                <p id="B2">B2</p>
             </div>
         <h3 style="margin-left: 20%; margin-top: 10px;">*Seleccione una de las siguientes secciones para pasar a la selección de asientos.</h3>    
         </div>
@@ -49,5 +49,16 @@
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
-
+<script type="text/javascript"> 
+    function direccion(area){
+     console.log(window.location.href);
+     var url = new URL(window.location.href);
+     var id = url.searchParams.get("id");
+     var titulo = url.searchParams.get("titulo");
+     var fecha = url.searchParams.get("fecha");
+     var hora = url.searchParams.get("hora");
+     console.log(id,' ',fecha," ",hora);
+     javascript:location.href='asientos.html?id='+id+"&titulo="+titulo+"&fecha="+fecha+"&hora="+hora+"&seccion="+area;
+    }
+</script>
 </html>
