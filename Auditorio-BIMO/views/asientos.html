@@ -44,7 +44,7 @@
 				<ul id="selected-seats" class="scrollbar"></ul>
 			
 						
-				<a href="pago_boletos.html"><button class="checkout-button">Reservar</button></a>
+				<a><button class="checkout-button" onclick="reservar()">Reservar</button></a>
 				<div id="legend"></div>
 			</div>
 			<div style="clear:both"></div>
@@ -53,6 +53,7 @@
 
 			<script type="text/javascript">
 				var price = 100; //price
+                var asientos=[]; 
 				$(document).ready(function() {
 					var $cart = $('#selected-seats'), //Sitting Area
 					$counter = $('#counter'), //Votes
@@ -97,7 +98,9 @@
 
 								        $counter.text(sc.find('selected').length+1);
 								        $total.text(recalculateTotal(sc)+price);
-								        
+                                        
+                                        console.log("Fila "+(this.settings.row+1)+" Asiento "+this.settings.label+"");
+								        asientos.push(""+(this.settings.row+1)+"_"+this.settings.label);
                                         return 'selected';  
 								         
                                     }else{
@@ -110,10 +113,11 @@
 									$counter.text(sc.find('selected').length-1);
 									//update totalnum
 									$total.text(recalculateTotal(sc)-price);
-										
 									//Delete reservation
 									$('#cart-item-'+this.settings.id).remove();
 									//optional
+                                    var ind=asientos.indexOf(""+(this.settings.row+1)+"_"+this.settings.label);
+                                    delete asientos[ind]; 
 									return 'available';
 							} else if (this.status() == 'unavailable') { //sold
 								return 'unavailable';
@@ -134,8 +138,15 @@
 					});
 							
 					return total;
-				}
+				} 
+                
+             function reservar(){
+                for(var i=0; i<asientos.length; i++){
+                    console.log(asientos[i]);
+                }
+            }
 			</script> 
+ 
 	</div>
 </div> 
 
