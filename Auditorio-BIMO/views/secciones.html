@@ -40,25 +40,18 @@
             </div>
         <h3 style="margin-left: 20%; margin-top: 10px;">*Seleccione una de las siguientes secciones para pasar a la selección de asientos.</h3>    
         </div>
-        <a href="eventos.html" class="btn2" id="homeBtn">
+        <a onclick="backToEventos()" class="btn2" id="homeBtn">
             <i class="fas fa-home fa-4x"></i>
             <br/>Regresar
         </a>
     </div>
     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
+        function backToEventos() {
+            var searchParams = window.location.search.split('&folio_artista')[0];
+            window.location='eventos.html'+searchParams;
+        }
     </script>
 </body>
-<script type="text/javascript"> 
-    function direccion(area){
-     console.log(window.location.href);
-     var url = new URL(window.location.href);
-     var id = url.searchParams.get("id");
-     var titulo = url.searchParams.get("titulo");
-     var fecha = url.searchParams.get("fecha");
-     var hora = url.searchParams.get("hora");
-     console.log(id,' ',fecha," ",hora);
-     javascript:location.href='asientos.html?id='+id+"&titulo="+titulo+"&fecha="+fecha+"&hora="+hora+"&seccion="+area;
-    }
-</script>
+<script type="text/javascript" src="../js/secciones.js"></script>
 </html>

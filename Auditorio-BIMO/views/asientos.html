@@ -144,7 +144,11 @@
                 for(var i=0; i<asientos.length; i++){
                     console.log(asientos[i]);
                 }
-            }
+			}
+			function backToEventos() {
+				var searchParams = window.location.search.split('&folio_artista')[0];
+				window.location='eventos.html'+searchParams;
+			}
 			</script> 
  
 	</div>
@@ -153,7 +157,7 @@
 <div class="inferior"> 
 <img id="helpbutton" onclick="ayuda_asientos()" class="helpbutton" style="position: relative; bottom: 10px;"src="../img/helpbtn.png">
 <audio id="audio" src="../audio/asientos.mp3" ></audio>
-    <a href="eventos.html" class="btn2" id="homeBtn">
+    <a onclick="backToEventos()" class="btn2" id="homeBtn">
             <i class="fas fa-home fa-4x"></i>
             <br/>Regresar
     </a>   
