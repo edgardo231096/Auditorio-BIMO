@@ -1,4 +1,4 @@
-function direccion(x,tit,sel,hr){
+/*function direccion(x,tit,sel,hr){
     var fecha=document.getElementById(sel.id).value;
     var titulo=document.getElementById(tit.id).innerHTML;
     var hora=document.getElementById(hr.id).innerHTML;
@@ -7,16 +7,19 @@ function direccion(x,tit,sel,hr){
     console.log(x.id," ",titulo," ",hora); 
     document.getElementById( x.id ).href += '?id='+x.id+'&titulo='+titulo+'&fecha='+fecha+'&hora='+hora;
 }
-
+*/
 $(document).ready(function() {
     Eventos.getAll(function(resp) {
         console.log(resp);
         $.each(resp, function(i, data){ 
             var funciones = "";
-            if(data.funciones)
+            if(data.funciones) {
                 $.each(data.funciones, function(i, fun){
                     funciones += `<option value="${fun.id}">${fun.fecha} - ${fun.hora}</option>`;
                 });
+            }
+            var queryParams = "&folio_artista=" + data.folio;
+            var primeraFuncion = (data != undefined && data.funciones != undefined && data.funciones.length > 0)?data.funciones[0]:"";
             $("#carousel-container").append(`
             <div class="bloqArt">
             <div class="desc">
@@ -38,7 +41,7 @@ $(document).ready(function() {
                     <span id="titulo1" class="titulo">"${data.nombre}"</span><br>
                     <span class="banda">${data.artistas}</span><br>
                     </div>
-                    <select id="select1" class="selectFunciones"> 
+                    <select id="select1" class="selectFunciones funcion${data.folio}"> 
                     ${funciones}
                     </select>
                 </div>
@@ -51,14 +54,14 @@ $(document).ready(function() {
                 <img class="patrocinador" src="../img/bimbo.png">
                 <img class="patrocinador" src="../img/coca.png">
             </div>
-            <a class="boleto" id="1"  href="secciones.html" onclick="direccion(this, titulo1, select1, hora1)">Comprar</a>
+            <a class="boleto boletoButton${data.folio}" data-idfuncion${data.folio}="${primeraFuncion.id}"  href="secciones.html${window.location.search}${queryParams}">Comprar</a>
         </div> 
             `);
+            $(".boletoButton" + data.folio).click(function(evt){
+                var newHref =  $(".boletoButton" + data.folio).attr('href') +  "&funcion_id=" + $(".funcion" + data.folio).val();
+                $(".boletoButton" + data.folio).attr('href', newHref);
+            });
         });
         $.getScript('../css/dist/jquery.carousel-3d.js');
     });
 });
-
-$(document).ready(function() {
-    //$.getScript('../css/dist/jquery.carousel-3d.js');
-})
