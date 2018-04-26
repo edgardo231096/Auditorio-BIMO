@@ -18,7 +18,7 @@ $(document).ready(function() {
                     funciones += `<option value="${fun.id}">${fun.fecha} - ${fun.hora}</option>`;
                 });
             }
-            var queryParams = "&folio_artista=" + data.folio;
+            var queryParams = ( (window.location.search == "") ? "?" : "&" ) + "folio_artista=" + data.folio;
             var primeraFuncion = (data != undefined && data.funciones != undefined && data.funciones.length > 0)?data.funciones[0]:"";
             $("#carousel-container").append(`
             <div class="bloqArt">

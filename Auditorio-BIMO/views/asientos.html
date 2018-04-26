@@ -44,7 +44,7 @@
 				<ul id="selected-seats" class="scrollbar"></ul>
 			
 						
-				<a href="pago_boletos.html"><button class="checkout-button" onclick="reservar()">Reservar</button></a>
+				<a href="pago_boletos.html" id="reservarBtn"><button class="checkout-button">Reservar</button></a>
 				<div id="legend"></div>
 			</div>
 			<div style="clear:both"></div>
@@ -146,8 +146,12 @@
                 }
 			}
 			function backToEventos() {
-				var searchParams = window.location.search.split('&folio_artista')[0];
-				window.location='eventos.html'+searchParams;
+				if(window.location.search.indexOf('&folio_artista') >= 0) {
+					var searchParams = window.location.search.split('&folio_artista')[0];
+					window.location='eventos.html'+searchParams;
+				} else {
+					window.location='eventos.html';
+				}
 			}
 			</script> 
  
@@ -168,19 +172,6 @@
 <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
 </script>
-<script> 
-     var url = new URL(window.location.href);
-     var id = url.searchParams.get("id");
-     var titulo = url.searchParams.get("titulo");
-     var fecha = url.searchParams.get("fecha");
-     var hora = url.searchParams.get("hora");   
-     var seccion = url.searchParams.get("seccion");  
-     document.getElementById("seccion").innerHTML = "Seccion: "+seccion+"";
-     titulo.replace("%20"," ")
-     document.getElementById("titulo").innerHTML = titulo;
-    document.getElementById("fecha").innerHTML = fecha+", "+hora+" hrs";
-    
-</script>
 <script src="../js/main.js"></script> 
  <script src="../js/enjoyhint.min.js"></script>
 <script src="../lib/bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
@@ -188,6 +179,7 @@
 <script src="../lib/bower_components/modernizr/modernizr.js"></script>
 <script src="../lib/fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.min.js"></script>
 <script src="../lib/seats/jquery.seat-charts.js"></script>
+<script src="../js/asientos.js"></script>
 <!--<script src="../lib/seats/jquery.nicescroll.js"></script> -->
 <script src="../lib/seats/scripts.js"></script>
 </body>
