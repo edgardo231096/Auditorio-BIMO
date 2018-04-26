@@ -48,8 +48,12 @@
     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
         function backToEventos() {
-            var searchParams = window.location.search.split('&folio_artista')[0];
-            window.location='eventos.html'+searchParams;
+            if(window.location.search.indexOf('&folio_artista') >= 0) {
+                var searchParams = window.location.search.split('&folio_artista')[0];
+                window.location='eventos.html'+searchParams;
+            } else {
+                window.location='eventos.html';
+            }
         }
     </script>
 </body>
