@@ -14,16 +14,10 @@ $(document).ready(function() {
     var funcion_id = parseInt(url.searchParams.get("funcion_id"));
     var folio_artista = url.searchParams.get("folio_artista");
     var seccion = url.searchParams.get("seccion");
-    var eventosByFolioEndpoint = `https://apis.bimo.com/eventosapi/datos_eventos/${folio_artista}?api_key=np5jlomgamUPXSj2TQOqhQMbxlRjSDDjMA9M2Mqu`;
 
     document.getElementById("seccion").innerHTML = "Seccion: "+seccion+""; 
-    /*document.getElementById("titulo").innerHTML = titulo;
-    document.getElementById("fecha").innerHTML = fecha+", "+hora+" hrs";
-    */
-    $.ajax({
-        url: eventosByFolioEndpoint,
-        method: 'GET'
-    }).done(function(resp){
+
+    Eventos.eventosPorFolioArtista(folio_artista, function(resp) {
         document.getElementById("titulo").innerHTML = resp[0].nombre;
         $.each(resp[0].funciones, function(i, funcion){
             console.log(funcion);
@@ -31,8 +25,5 @@ $(document).ready(function() {
                 document.getElementById("fecha").innerHTML = funcion.fecha+", "+funcion.hora+" hrs";
             }
         });
-        
-    }).fail(function(){
-        alert("Error con la conexion al servidor...");
     });
 });
