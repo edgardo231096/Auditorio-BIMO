@@ -1,6 +1,6 @@
 var Promociones = (function($) {
     var baseUrl = "https://apis.bimo.com/promosapi";
-    var apikey = "?api_key=np5jlomgamUPXSj2TQOqhQMbxlRjSDDjMA9M2Mqu";
+    var apikey = "?api_key=" + GlobalConfig.apikey;
     var getAll = function(cb) {
         $.ajax({
             url: baseUrl + "/all" + apikey,
