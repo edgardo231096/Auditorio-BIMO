@@ -27,9 +27,49 @@ var Eventos = (function($) {
         });
     }
 
+    var asientosPorFuncionId = function(id_funcion, seccion, cb) {
+        var asientosPorFuncionIdEndpoint = `https://apis.bimo.com/eventosapi/all-seats/${id_funcion}/${seccion}?api_key=${GlobalConfig.apikey}`;
+        $.ajax({
+            url: asientosPorFuncionIdEndpoint,
+            method: 'GET'
+        }).done(function(resp){
+            cb(resp);
+        }).fail(function(){
+            alert("Error con la conexion al servidor...");
+        });
+    }
+
+    var preciosPorEvento = function(folio_evento, cb) {
+        var preciosPorEventoEndpoint = `https://apis.bimo.com/eventosapi/preciosporevento/${folio_evento}?api_key=${GlobalConfig.apikey}`;
+        $.ajax({
+            url: preciosPorEventoEndpoint,
+            method: 'GET'
+        }).done(function(resp){
+            cb(resp);
+        }).fail(function(){
+            alert("Error con la conexion al servidor...");
+        });
+    }
+
+    var guardarReservacion = function(no_tarjeta, cvc, cb){
+        var params = (new URL(window.location.href)).searchParams;
+        var saveEndpoint = `https://apis.bimo.com/eventosapi/save/${params.get("folio_artista")}/${params.get("funcion_id")}/${params.get("seccion")}/${params.get("asientos")}/${no_tarjeta}/${cvc}?api_key=${GlobalConfig.apikey}`;
+        $.ajax({
+            url: saveEndpoint,
+            method: 'GET'
+        })
+        .done(function(resp){ cb(resp) })
+        .fail(function(){
+            alert("Error con la conexion al servidor...");
+        });
+    }
+
 
     return {
         getAll: getAll,
-        eventosPorFolioArtista: eventosPorFolioArtista
+        eventosPorFolioArtista: eventosPorFolioArtista,
+        asientosPorFuncionId: asientosPorFuncionId,
+        preciosPorEvento: preciosPorEvento,
+        guardarReservacion: guardarReservacion
     }
 })(jQuery);
