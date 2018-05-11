@@ -120,14 +120,21 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
     <button id="back">Girar</button>
     <button id="continue">Continuar</button>
   </div>
+  
+  <div class="popup">
+	<h2>Desea reservar espacio de estacionamiento para este evento?</h2>
+	<button name="go">Sí, ir a la selección de cajón.</button><br>
+	<button name="close">No, regresar a la pantalla de inicio. </button>
+</div>
 </div>
 				    
-				    
-				</div>
+				    				    
+</div>
 
 			</div>
 			<div class="inferior"> 
                         <img id="helpbutton" onclick="ayuda_pagos()"  class="helpbutton" src="../img/helpbtn.png">
+                         <progress id='progress3' max='100' value='0'></progress>
                         <audio id="audio" src="../audio/pagos.mp3" ></audio>
                         <a href="../index.html" class="btn" id="homeBtn">
                         <i class="fas fa-home fa-4x"></i>
