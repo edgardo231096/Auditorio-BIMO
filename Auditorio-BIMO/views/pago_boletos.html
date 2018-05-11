@@ -26,6 +26,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script type="text/javascript" src="../lib/jquery/move-top.js"></script>
 <script type="text/javascript" src="../lib/jquery/easing.js"></script>
 <script src="../js/teclado.js"></script>
+<script src="../js/ajax/eventos.js"></script>
+<script src="../js/pagar_boletos.js"></script>
 
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
@@ -159,22 +161,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</div>
 
   <script> 
-! function(a) {
-    a(function() {
-        var flag=true; 
-        a(".button-sent #back").hide(), a(".button-sent #continue").click(function(b) {
-            if(flag===true){
-            a("#area .master-card").css("transform", "rotateY(180deg)"), a(".button-sent #back").show()
-            flag=false; 
-            }else{
-             //window.location='parking.html';      
-            }
-        }), a(".button-sent #back").click(function(b) {
-            a("#area .master-card").css("transform", "rotateY(0deg)"), a(this).hide()
-            flag=true; 
-        })
-    })
-}(jQuery);
+
 </script>
 
 
