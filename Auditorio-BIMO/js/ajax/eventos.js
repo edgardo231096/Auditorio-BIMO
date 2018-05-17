@@ -53,7 +53,7 @@ var Eventos = (function($) {
 
     var guardarReservacion = function(no_tarjeta, cvc, cb){
         var params = (new URL(window.location.href)).searchParams;
-        var saveEndpoint = `https://apis.bimo.com/eventosapi/save/${params.get("folio_artista")}/${params.get("funcion_id")}/${params.get("seccion")}/${params.get("asientos")}/${no_tarjeta}/${cvc}?api_key=${GlobalConfig.apikey}`;
+        var saveEndpoint = `https://apis.bimo.com/eventosapi/save/${params.get("funcion_id")}/${params.get("folio_artista")}/${params.get("seccion")}/${params.get("asientos")}/${no_tarjeta}/${cvc}?api_key=${GlobalConfig.apikey}`;
         $.ajax({
             url: saveEndpoint,
             method: 'GET'
