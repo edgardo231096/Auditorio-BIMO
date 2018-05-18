@@ -20,10 +20,7 @@ $(document).ready(function() {
 
         //c3
         for(var i = 0 ; i < 6; i++) {
-            if(i < 3)
-                var cajonHTML = $("<div class='cajon cajonVertical cajonDisp' id='cajon"+c+"'>");
-            else
-                var cajonHTML = $("<div class='cajon cajonVertical cajonNoDisp' id='cajon"+c+"'>");
+            var cajonHTML = $("<div class='cajon cajonVertical cajonDisp' id='cajon"+c+"'>");
             cajonHTML.html(c);
             $(".c3").append(cajonHTML);
             c++;
@@ -76,6 +73,31 @@ $(document).ready(function() {
             $("#selectedCajon").text($(this).text());
         });
 
+        //Cargar cajones ocupados
+        var url = new URL(window.location.href);
+        var funcion_id = url.searchParams.get("funcion_id"),
+        cardNumber = url.searchParams.get("cardNumber");
+
+        if(funcion_id) {
+            Parking.cajonesPorFuncion(funcion_id, function(resp) {
+                console.log(resp);
+                $.each(resp, function(i, elem) {
+                    var curCajon = $("#cajon" + elem.num_cajon);
+                    curCajon.removeClass('cajonSelected');
+                    curCajon.removeClass('cajonDisp');
+                    curCajon.addClass('cajonNoDisp');
+                    curCajon.unbind("click");
+                });
+            });
+        } else {
+            console.log("funcion_id is not present...");
+        }
+
+        $("#pagoBtn").click(function(evt) {
+            evt.preventDefault();
+            window.location.href = "pago_estacionamiento.html?funcion_id=" + funcion_id + "&cardNumber=" + cardNumber;
+        });
+        
     }
 
     init();
