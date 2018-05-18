@@ -93,7 +93,7 @@ label{
 .main{
     width: 100%; 
     margin-top: -40px; 
-    margin-left: 20%; 
+    margin-left: 13%;  
     background:rgba(255, 255, 255, 0.88);
     padding: 30px 30px;
 }
@@ -291,7 +291,7 @@ ul.book-right li {
 }
 @media (max-width: 1366px){
 	.main {
-		width: 68%;
+		width: 72%;
 	}	
 }
 @media (max-width: 1280px){
@@ -301,7 +301,7 @@ ul.book-right li {
 }
 @media (max-width: 1080px){
 	.main {
-		width: 67%;
+		width: 72%;
 	}	
 }
 @media (max-width: 1024px){
@@ -555,8 +555,12 @@ ul.book-right li {
     transition: .4s;
     text-align: center;
     margin-top: -150%;  
-}
+} 
 
+.atras{ 
+    
+    font-size: 20px;
+}
 
 
 .btn3 svg{

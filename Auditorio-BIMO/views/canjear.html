@@ -164,7 +164,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script>
   $("#card-btn").click(function(evt){
     evt.preventDefault();
-    if($("#card-number").val() != ''){
+    console.log("->",$("#card-mounth").val());
+    if($("#card-number").val() != '' && $("#card-month").val() != '' && parseInt($("#card-month").val()) > 00 && parseInt($("#card-month").val()) <= 12 && $("#card-year").val() != '' && parseInt($("#card-year").val()) >= 17 && parseInt($("#card-year").val()) <= 24  && $("#card-number").val().slice(12) == $("#card-cvc").val()   ){
       var queryString = "?titular=" + $("#card-number").val();
       window.location.href = "promos.html" + queryString;
     }

@@ -50,8 +50,6 @@
 			</div>
 			<div style="clear:both"></div>
 	    </div>
-	    
-
 			<script type="text/javascript">
 				var url = new URL(window.location.href);
 				var price; //price
@@ -179,6 +177,10 @@
 					window.location='eventos.html';
 				}
 			}
+            function backToSeccion() {
+					var searchParams = window.location.search.split('&folio_artista')[0].split("&");
+					window.location='secciones.html'+searchParams[0]+"&"+searchParams[1];
+			}
 			</script> 
  
 	</div>
@@ -187,9 +189,9 @@
 <div class="inferior"> 
 <img id="helpbutton" onclick="ayuda_asientos()" class="helpbutton" style="position: relative; bottom: 10px;"src="../img/helpbtn.png">
 <audio id="audio" src="../audio/asientos.mp3" ></audio>
-   <a onclick="backToEventos()" class="btn3" id="homeBtn">
+   <a onclick="backToSeccion()" class="btn3" id="homeBtn">
             <i class="fas fa-angle-left fa-5x"></i>
-            <br/>Atrás
+            <br/><div class="atras">Atrás</div>
     </a>   
     <a onclick="backToEventos()" class="btn2" id="homeBtn">
             <i class="fas fa-home fa-4x"></i>
