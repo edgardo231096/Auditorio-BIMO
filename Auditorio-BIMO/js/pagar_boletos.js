@@ -85,7 +85,7 @@ function popupOpenClose(popup, cardNumber, funcion_id) {
 		}
 		$(popup).hide();
         console.log("cardNumber -> ", cardNumber, "funcion_id -> ", funcion_id);
-        window.location.href = "parking.html";
+        window.location.href = "parking.html?funcion_id=" + funcion_id + "&cardNumber=" + cardNumber;
 	});
 	
 	/* Close popup and remove errors if user clicks on cancel or close buttons */
