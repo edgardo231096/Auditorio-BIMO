@@ -10,7 +10,7 @@
 */
 $(document).ready(function() {
     Eventos.getAll(function(resp) {
-        console.log(resp);
+        console.log(resp); //si es igual a 1, deshabilitar botones laterales
         $.each(resp, function(i, data){ 
             var funciones = "";
             if(data.funciones) {

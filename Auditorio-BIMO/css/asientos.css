@@ -92,7 +92,7 @@ label{
 }
 .main{
     width: 100%; 
-    margin-top: -25px; 
+    margin-top: -40px; 
     margin-left: 20%; 
     background:rgba(255, 255, 255, 0.88);
     padding: 30px 30px;
@@ -523,7 +523,7 @@ ul.book-right li {
     font-weight: bold;
     transition: .4s;
     text-align: center;
-    margin-top: -150%;  
+    margin-top: -180%;  
 }
 
 
@@ -533,6 +533,37 @@ ul.book-right li {
 }
 
 .btn2:hover {
+    background: white;
+    color: dodgerblue;
+}  
+
+.btn3{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 30px;
+    margin-left: 670%;
+    width: 110px;
+    height: 110px;
+    line-height: 30px;
+    border-radius: 50%;
+    border: solid 7px white;
+    /* padding-bottom: 20px; */
+    vertical-align: middle;
+    overflow: hidden;
+    font-weight: bold;
+    transition: .4s;
+    text-align: center;
+    margin-top: -150%;  
+}
+
+
+
+.btn3 svg{
+    padding-top: 3px;
+}
+
+.btn3:hover {
     background: white;
     color: dodgerblue;
 } 
