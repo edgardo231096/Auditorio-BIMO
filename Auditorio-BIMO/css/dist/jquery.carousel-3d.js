@@ -30,7 +30,9 @@
     var childrenWrapperObj = new ChildrenWrapper(this);
     var currentIndex = 0;
     this.appendChildrenWrapper(childrenWrapperObj);
+    var cuantos = 0;
     $children.each(function (index, childContent) {
+      cuantos ++;
       if ($(childContent).attr('selected')) {
         currentIndex = index;
       }
@@ -38,10 +40,15 @@
     }.bind(this));
 
     //create prev/next buttons
+      
     this._prevButton = $('<div data-prev-button></div>')[0];
-    $(this.el).append(this._prevButton);
+    if(cuantos > 1) {
+        $(this.el).append(this._prevButton);
+    }
     $(this._prevButton).click(this.prev.bind(this));
-    this._nextButton = $('<div data-next-button></div>')[0];
+    if(cuantos > 1) {
+        this._nextButton = $('<div data-next-button></div>')[0];
+    }
     $(this.el).append(this._nextButton);
     $(this._nextButton).click(this.next.bind(this));
       var coords = {

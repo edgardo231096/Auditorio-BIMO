@@ -103,6 +103,18 @@ var Eventos = (function($) {
         });
     } 
     
+     var funcAsociadas = function(no_tarjeta, cb) {
+        var funcAsociadasEndpoint = `https://apis.bimo.com/eventosapi/funciones-asociadas/${no_tarjeta}?api_key=${GlobalConfig.apikey}`;
+        $.ajax({
+            url: funcAsociadasEndpoint,
+            method: 'GET'
+        }).done(function(resp){
+            cb(resp);
+        }).fail(function(){
+            alert("Error con la conexion al servidor...");
+        });
+    } 
+    
     return {
         getAll: getAll,
         eventosPorFolioArtista: eventosPorFolioArtista,
@@ -111,6 +123,7 @@ var Eventos = (function($) {
         guardarReservacion: guardarReservacion,
         eventosReservadosPorTitular: eventosReservadosPorTitular,
         datosEventos: datosEventos,
-        getDatos: getDatos
+        getDatos: getDatos,
+        funcAsociadas: funcAsociadas
     }
 })(jQuery);
