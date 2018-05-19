@@ -2,12 +2,17 @@ $(document).ready(function() {
     var url = new URL(window.location.href);
     var no_tarjeta = parseInt(url.searchParams.get("no_tarjeta"));
    Eventos.eventosReservadosPorTitular(no_tarjeta, function(resp) {
-       // console.log(resp); //si es igual a 1, deshabilitar botones laterales
+       console.log(resp); //si es igual a 1, deshabilitar botones laterales
         $.each(resp, function(i, data){  
              var asientos=data.asientos.split(",");
+             var asientosHtml="";
+             for(var i=0; i<asientos.length; i++){
+                 asientosHtml+="<li>* <strong>"+asientos[i]+"</strong></li>";
+             }
+             
              console.log(asientos);
              Eventos.datosEventos(data.id_funcion, function(resp2) {
-                //console.log(resp2);
+                console.log(resp2);
                  $.each(resp2, function(i, data2){  
                      
                      $("#carousel-container").append(`
@@ -19,9 +24,9 @@ $(document).ready(function() {
               <li class="price"><span>$${data.total}</span></li>
             </ul>
             <h5 class="mydraggable">Asientos en ${data.seccion}</h5>
-            <ul class="features">
+            <ul class="features" id="lista_asientos">
              <div class="mydraggable"> 
-             ${asientos.forEach(function(elemento){"<li>* <strong>"+elemento+"</strong></li>"})}
+             ${asientosHtml}
              </div>
               <li class="buy">
                 <button id="boton" onclick='functionProgress3(0,this);'>Imprimir Comprobante</button>
