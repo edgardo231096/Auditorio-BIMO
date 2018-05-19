@@ -7,7 +7,7 @@ $(document).ready(function() {
            queryParam += elem + (( i < asientosNonUndefined.length-1 )?",":"");
         });
         if(asientosNonUndefined.length > 0)
-            window.location.href = 'pago_boletos.html' + window.location.search + queryParam;
+            window.location.href = 'pago_boletos.html' + window.location.search+"&total="+$("#total").text()+queryParam;
     });
 
     var url = new URL(window.location.href);

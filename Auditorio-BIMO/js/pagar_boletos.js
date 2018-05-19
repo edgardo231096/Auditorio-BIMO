@@ -22,7 +22,8 @@ $(document).ready(function(){
                     var funcion_id = parseInt(url.searchParams.get("funcion_id"));
                     var folio_artista = url.searchParams.get("folio_artista");
                     var seccion = url.searchParams.get("seccion");
-                    var asientos = url.searchParams.get("asientos");    
+                    var asientos = url.searchParams.get("asientos"); 
+                    var total = url.searchParams.get("total"); 
                     Eventos.guardarReservacion(cardNumber, cardCvc, function(resp) {
                         console.log("Resultado:", resp);
                     }); 

@@ -53,7 +53,10 @@ var Eventos = (function($) {
 
     var guardarReservacion = function(no_tarjeta, cvc, cb){
         var params = (new URL(window.location.href)).searchParams;
-        var saveEndpoint = `https://apis.bimo.com/eventosapi/save/${params.get("funcion_id")}/${params.get("folio_artista")}/${params.get("seccion")}/${params.get("asientos")}/${no_tarjeta}/${cvc}?api_key=${GlobalConfig.apikey}`;
+        var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
+        var localDate = (new Date(Date.now() - tzoffset)).toISOString().slice(0, 19).replace('T', ' ');
+        localDate=localDate.split(" ");
+        var saveEndpoint = `https://apis.bimo.com/eventosapi/save/${params.get("funcion_id")}/${params.get("folio_artista")}/${params.get("seccion")}/${params.get("asientos")}/${no_tarjeta}/${cvc}/${localDate[0]}/${localDate[1]}/${params.get("total")}?api_key=${GlobalConfig.apikey}`;
         $.ajax({
             url: saveEndpoint,
             method: 'GET'
@@ -64,12 +67,50 @@ var Eventos = (function($) {
         });
     }
 
-
+    var eventosReservadosPorTitular = function(no_tarjeta, cb) {
+        var eventosReservadosPorTitularEndpoint = `https://apis.bimo.com/eventosapi/asientos-reservados-por-titular/${no_tarjeta}?api_key=${GlobalConfig.apikey}`;
+        $.ajax({
+            url: eventosReservadosPorTitularEndpoint,
+            method: 'GET'
+        }).done(function(resp){
+            cb(resp);
+        }).fail(function(){
+            alert("Error con la conexion al servidor...");
+        });
+    } 
+    
+    var datosEventos = function(id_funcion, cb) {
+        var getDatosEndpoint = `https://apis.bimo.com/eventosapi/eventos-por-id/${id_funcion}?api_key=${GlobalConfig.apikey}`;
+        $.ajax({
+            url: getDatosEndpoint,
+            method: 'GET'
+        }).done(function(resp){
+            cb(resp);
+        }).fail(function(){
+            alert("Error con la conexion al servidor...");
+        });
+    } 
+    
+    var getDatos = function(no_tarjeta, cb) {
+        var getDatossEndpoint = `https://apis.bimo.com/eventosapi/get-datos/${no_tarjeta}?api_key=${GlobalConfig.apikey}`;
+        $.ajax({
+            url: getDatossEndpoint,
+            method: 'GET'
+        }).done(function(resp){
+            cb(resp);
+        }).fail(function(){
+            alert("Error con la conexion al servidor...");
+        });
+    } 
+    
     return {
         getAll: getAll,
         eventosPorFolioArtista: eventosPorFolioArtista,
         asientosPorFuncionId: asientosPorFuncionId,
         preciosPorEvento: preciosPorEvento,
-        guardarReservacion: guardarReservacion
+        guardarReservacion: guardarReservacion,
+        eventosReservadosPorTitular: eventosReservadosPorTitular,
+        datosEventos: datosEventos,
+        getDatos: getDatos
     }
 })(jQuery);

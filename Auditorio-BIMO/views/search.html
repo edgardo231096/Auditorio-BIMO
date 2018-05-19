@@ -61,7 +61,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<form action="#" method="post">
 				    <input class="busqueda" id="numBox" type="text" name="No_tarjeta" placeholder="Ingrese su número de tarjeta de credito" required=true>
 				    <div class="more">
-						<a href="reservaciones.html" class="hvr-underline-from-center">Buscar</a>
+						<a href="" onclick="sacartarjeta()" class="hvr-underline-from-center">Buscar</a>
 					</div>
 				    </form>
 				    
@@ -127,6 +127,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</script>
 	<script>
   document.addEventListener('contextmenu', event => event.preventDefault());  
+  </script>
+  <script>
+      function sacartarjeta(){
+       console.log("",$("#numBox").val());   
+       $(".hvr-underline-from-center").attr("href","reservaciones.html?no_tarjeta="+$("#numBox").val())
+      }
   </script>
 <!-- //here ends scrolling icon -->
 <script src="../js/main.js"></script> 
