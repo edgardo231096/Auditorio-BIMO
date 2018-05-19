@@ -12,7 +12,19 @@ var Parking = (function($) {
         });
     }
 
-    return {
-        cajonesPorFuncion: cajonesPorFuncion
+    var reservarCajon = function(id_funcion, no_tarjeta, num_cajon, cb) {
+        $.ajax({
+            url: baseUrl + `/add/${id_funcion}/${no_tarjeta}/${num_cajon}`+ apikey
+        }).done(function(resp) {
+            cb(resp);
+        }).fail(function(){
+            alert("Error con la conexion al servidor...");
+        });
     }
+
+    return {
+        cajonesPorFuncion: cajonesPorFuncion,
+        reservarCajon: reservarCajon
+    }
+
 })(jQuery);

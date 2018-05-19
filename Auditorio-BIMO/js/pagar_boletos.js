@@ -25,7 +25,11 @@ $(document).ready(function(){
                     var asientos = url.searchParams.get("asientos"); 
                     var total = url.searchParams.get("total"); 
                     Eventos.guardarReservacion(cardNumber, cardCvc, function(resp) {
-                        console.log("Resultado:", resp);
+                        /*if(resp == true) {
+
+                        } else {
+                            alert("Lo sentimos, has intentado insertar mas de 5 asientos, por favor vuelve al menu de inicio e intenta de nuevo");
+                        }*/
                     }); 
                         
                         // tiempo de actualizacion del progress

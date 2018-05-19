@@ -216,3 +216,15 @@
 .cajonSelected:hover {
     background-color: dodgerblue;
 }
+
+#costoContainer {
+    position: absolute;
+    top: 0;
+    color: white;
+    right: 0;
+    margin-right: 30px;
+    margin-top: 300px;
+    border: solid white 3px;
+    padding: 10px;
+    border-radius: 15px;
+}
