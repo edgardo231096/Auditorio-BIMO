@@ -28,10 +28,11 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="../css/enjoyhint.css" rel="stylesheet"> 
 <!-- //Custom Theme files -->
 <script src="../lib/jquery/jquery.min.js"></script>
-<script src="../lib/fontawesome-free-5.0.8/svg-with-js/js/fontawesome-all.min.js"></script>
-<script type="text/javascript" src="../lib/jquery/move-top.js"></script>
-<script type="text/javascript" src="../lib/jquery/easing.js"></script>
+<script src="../lib/jquery/move-top.js"></script>
+<script src="../lib/jquery/easing.js"></script>
 <script src="../js/teclado.js"></script>
+<script src="../js/pagar_estacionamiento.js"></script>
+
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -44,7 +45,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </head>
 <body>
 <script src="../lib/jquery/jquery.vide.min.js"></script>
-	<script src="js/jquery.vide.min.js"></script>
 	<div data-vide-bg="../video/parking2">
 		<div class="center-container">
 			<div class="navigation">
@@ -122,6 +122,11 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
   <div class="button-sent">
     <button id="back">Girar</button>
     <button id="continue">Continuar</button>
+  </div>
+  <div class="popup">
+    <h2>Desea reservar espacio de estacionamiento para este evento?</h2>
+    <button name="go">Sí, ir a la selección de cajón.</button><br>
+    <button name="close">No, regresar a la pantalla de inicio. </button>
   </div>
 </div>
 				    
@@ -211,8 +216,5 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //here ends scrolling icon -->
 <script src="../js/main.js"></script> 
 <script src="../js/enjoyhint.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-<script src="https://use.fontawesome.com/f1e0bf0cbc.js"></script>
-</body>
+ </body>
 </html>

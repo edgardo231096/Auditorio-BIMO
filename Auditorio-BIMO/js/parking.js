@@ -66,11 +66,12 @@ $(document).ready(function() {
             $(".c6").append(cajonHTML);
             c++;
         }
-
+        var cajonActual;
         $('.cajonDisp').click(function() {
             $('.cajon').removeClass('cajonSelected');
             $(this).addClass('cajonSelected');
             $("#selectedCajon").text($(this).text());
+            cajonActual = $(this).text();
         });
 
         //Cargar cajones ocupados
@@ -95,7 +96,11 @@ $(document).ready(function() {
 
         $("#pagoBtn").click(function(evt) {
             evt.preventDefault();
-            window.location.href = "pago_estacionamiento.html?funcion_id=" + funcion_id + "&cardNumber=" + cardNumber;
+            if(cajonActual) {
+                window.location.href = "pago_estacionamiento.html?funcion_id=" + funcion_id + "&cardNumber=" + cardNumber + "&num_cajon=" + cajonActual;
+            } else {
+                alert("Seleccione un cajón primero");
+            }
         });
         
     }
