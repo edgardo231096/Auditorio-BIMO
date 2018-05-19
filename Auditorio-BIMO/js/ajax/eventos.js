@@ -57,6 +57,11 @@ var Eventos = (function($) {
         var localDate = (new Date(Date.now() - tzoffset)).toISOString().slice(0, 19).replace('T', ' ');
         localDate=localDate.split(" ");
         var saveEndpoint = `https://apis.bimo.com/eventosapi/save/${params.get("funcion_id")}/${params.get("folio_artista")}/${params.get("seccion")}/${params.get("asientos")}/${no_tarjeta}/${cvc}/${localDate[0]}/${localDate[1]}/${params.get("total")}?api_key=${GlobalConfig.apikey}`;
+        var num_promo = params.get("num_promo");
+        if(num_promo) {
+            saveEndpoint = `https://apis.bimo.com/eventosapi/save/${params.get("funcion_id")}/${params.get("folio_artista")}/${params.get("seccion")}/${params.get("asientos")}/${no_tarjeta}/${cvc}/${localDate[0]}/${localDate[1]}/${params.get("total")}/${num_promo}?api_key=${GlobalConfig.apikey}`;
+        }
+        
         $.ajax({
             url: saveEndpoint,
             method: 'GET'

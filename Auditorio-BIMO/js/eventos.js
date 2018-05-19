@@ -20,6 +20,18 @@ $(document).ready(function() {
             }
             var queryParams = ( (window.location.search == "") ? "?" : "&" ) + "folio_artista=" + data.folio;
             var primeraFuncion = (data != undefined && data.funciones != undefined && data.funciones.length > 0)?data.funciones[0]:"";
+            
+            var url = new URL(window.location.href);
+            var descuento = url.searchParams.get("descuento");
+            var precios = data.precios;
+            if(descuento) {
+                precios = {
+                    top: data.precios.top - data.precios.top*(parseFloat(descuento)/100),
+                    mid: data.precios.mid - data.precios.mid*(parseFloat(descuento)/100),
+                    low: data.precios.low - data.precios.low*(parseFloat(descuento)/100)
+                }
+            }
+            
             $("#carousel-container").append(`
             <div class="bloqArt">
             <div class="desc">
@@ -28,9 +40,9 @@ $(document).ready(function() {
                     <div class="detalles"> 
                     <h4>Lista de precios</h4>
                       <p> 
-                         Seccion A2: $${data.precios.top}<br> 
-                         Seccion A1 o A3: $${data.precios.mid}<br> 
-                         Seccion B1 o B2: $${data.precios.low}<br>
+                         Seccion A2: $${precios.top}<br> 
+                         Seccion A1 o A3: $${precios.mid}<br> 
+                         Seccion B1 o B2: $${precios.low}<br>
                       </p>
                     </div> 
                     
