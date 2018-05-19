@@ -57,6 +57,7 @@ $(document).ready(function(){
         $('#back').prop('disabled', true);
         $('#helpbutton').prop("onclick", null);
         $('#homeBtn').removeAttr("href");
+        $('#progress3_label').show();
         if(!loading){
           // actualizo
           function decrementar(i) {
@@ -67,6 +68,7 @@ $(document).ready(function(){
                 $('#progress3').hide();  
                 loading = false;
                 popupOpenClose($(".popup"));
+                $('#progress3_label').hide();
             }
               if(i < max)
               setTimeout(function() { decrementar(i + 1) }, TIME);
@@ -106,8 +108,7 @@ function popupOpenClose(popup) {
 			$(".formElementError").remove();
 		}
         $(popup).hide();
-        alert("close");
-        //window.location.href = "../index.html";
+        window.location.href = "../index.html";
 	});
 }
 
