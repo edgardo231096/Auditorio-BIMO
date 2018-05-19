@@ -19,14 +19,14 @@ $(document).ready(function(){
                     var cardCvc = $("#card-cvc").val();
                     //folio_artista=1&funcion_id=0&seccion=A1&asientos=5_5,5_6,5_7
                     var url = new URL(window.location.href);
-                  /*  var funcion_id = parseInt(url.searchParams.get("funcion_id"));
-                    var folio_artista = url.searchParams.get("folio_artista");
-                    var seccion = url.searchParams.get("seccion");
-                    var asientos = url.searchParams.get("asientos"); 
-                    var total = url.searchParams.get("total"); 
-                    *//*Eventos.guardarReservacion(cardNumber, cardCvc, function(resp) {
-                        console.log("Resultado:", resp);
-                    });*/ 
+                    var id_funcion = parseInt(url.searchParams.get("funcion_id"));
+                    var no_tarjeta = url.searchParams.get("cardNumber");
+                    var num_cajon = url.searchParams.get("num_cajon");
+                   
+                    //Insertar en bd
+                    Parking.reservarCajon(id_funcion, no_tarjeta, num_cajon, function(resp) {
+                        console.log("insercion correcta :)");
+                    }); 
                         
                         // tiempo de actualizacion del progress
                         TIME = 60;
@@ -57,6 +57,7 @@ $(document).ready(function(){
         $('#back').prop('disabled', true);
         $('#helpbutton').prop("onclick", null);
         $('#homeBtn').removeAttr("href");
+        $('#progress3_label').show();
         if(!loading){
           // actualizo
           function decrementar(i) {
@@ -67,6 +68,7 @@ $(document).ready(function(){
                 $('#progress3').hide();  
                 loading = false;
                 popupOpenClose($(".popup"));
+                $('#progress3_label').hide();
             }
               if(i < max)
               setTimeout(function() { decrementar(i + 1) }, TIME);
@@ -106,8 +108,7 @@ function popupOpenClose(popup) {
 			$(".formElementError").remove();
 		}
         $(popup).hide();
-        alert("close");
-        //window.location.href = "../index.html";
+        window.location.href = "../index.html";
 	});
 }
 

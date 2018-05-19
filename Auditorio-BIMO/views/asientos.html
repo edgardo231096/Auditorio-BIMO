@@ -63,6 +63,11 @@
 					} else {
 						price = todosPrecios.low;
 					}
+
+            		var descuento = url.searchParams.get("descuento");
+					if(descuento) {
+						price = price - price*(parseFloat(descuento)/100);
+					}
 				});
                 var asientos=[]; 
 				$(document).ready(function() {
