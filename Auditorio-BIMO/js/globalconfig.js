@@ -1,3 +1,3 @@
 const GlobalConfig = {
-    apikey: "57Si9oCnIZWpC4ghb0t6hNP6J9AiK0iABuRO2gYt"
+    apikey: "np5jlomgamUPXSj2TQOqhQMbxlRjSDDjMA9M2Mqu"
 };
