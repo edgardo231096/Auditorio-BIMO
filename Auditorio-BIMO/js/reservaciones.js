@@ -40,9 +40,16 @@ $(document).ready(function() {
                 //-------------------------fin------------------------------------------------
              }); 
                      
-                 });
+          });
                  
-        }); $.getScript('../css/dist/jquery.carousel-3d.js'); 
-}); 
-    
+        });   
+        
+  }); 
+
+      setTimeout(function(){
+          $.getScript('../css/dist/jquery.carousel-3d.js');
+          setTimeout(function () {
+            $("#carousel-container div").css("visibility","visible");  
+          },500);
+        },400);
 });
