@@ -179,7 +179,7 @@
 
 #homeBtn{
     margin-top: -80px !important;
-    margin-left: 1150px !important;
+    margin-left: 1135px !important;
     padding-bottom: 0px !important;
 }
 .parkingSelected h2 {
@@ -222,7 +222,7 @@
     top: 0;
     color: white;
     right: 0;
-    margin-right: 30px;
+    margin-right: 15px;
     margin-top: 300px;
     border: solid white 3px;
     padding: 2px;

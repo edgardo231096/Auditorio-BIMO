@@ -89,8 +89,8 @@ body {
   font-family: Arial, sans-serif;
   color: #024457;
   background: #f2f2f2;
-  overflow-y: scroll;  
-  overflow: hidden; 
+  overflow-y: hidden !important;  
+  overflow: hidden !important; 
    height: 100%; 
     width: 100%; 
 }

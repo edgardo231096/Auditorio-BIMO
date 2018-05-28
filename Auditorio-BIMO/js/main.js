@@ -30,7 +30,7 @@ function ayuda_asientos() {
 	//hide EnjoyHint after a click on the button.
 	var enjoyhint_script_steps = [
 	  {
-	    'click .scrollbar' : 'Si es necesario deslice el dedo sobre los bloques que aparecen en esta sección hacia arriba / abajo...',
+	    'click .checkout-button' : 'Si es necesario deslice el dedo sobre los bloques que aparecen en esta sección hacia arriba / abajo...',
 	    'skipButton' : {text: 'Ok! Entiendo', className: 'tootltip_button'}
 	  }  
 	];

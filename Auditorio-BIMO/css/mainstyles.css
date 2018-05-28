@@ -209,3 +209,15 @@ p{
     margin-top: 10px; 
     
 }
+
+
+.nodataWarn {
+  color: white;
+  position: absolute;
+  top: 0;
+  font-family: arial;
+  font-weight: lighter;
+  font-size: 30pt;
+  margin-left: 23%;
+  margin-top: 200px;
+}

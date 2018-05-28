@@ -59,7 +59,7 @@ var Eventos = (function($) {
         var saveEndpoint = `https://apis.bimo.com/eventosapi/save/${params.get("funcion_id")}/${params.get("folio_artista")}/${params.get("seccion")}/${params.get("asientos")}/${no_tarjeta}/${cvc}/${localDate[0]}/${localDate[1]}/${params.get("total")}?api_key=${GlobalConfig.apikey}`;
         var num_promo = params.get("num_promo");
         if(num_promo) {
-            saveEndpoint = `https://apis.bimo.com/eventosapi/save/${params.get("funcion_id")}/${params.get("folio_artista")}/${params.get("seccion")}/${params.get("asientos")}/${no_tarjeta}/${cvc}/${localDate[0]}/${localDate[1]}/${params.get("total")}/${num_promo}?api_key=${GlobalConfig.apikey}`;
+            saveEndpoint = `https://apis.bimo.com/eventosapi/save_wpromo/${params.get("funcion_id")}/${params.get("folio_artista")}/${params.get("seccion")}/${params.get("asientos")}/${no_tarjeta}/${cvc}/${localDate[0]}/${localDate[1]}/${params.get("total")}/${num_promo}?api_key=${GlobalConfig.apikey}`;
         }
         
         $.ajax({
