@@ -15,7 +15,7 @@ $(document).ready(function() {
     var folio_artista = url.searchParams.get("folio_artista");
     var seccion = url.searchParams.get("seccion");
 
-    document.getElementById("seccion").innerHTML = "Seccion: "+seccion+""; 
+    document.getElementById("seccion").innerHTML = "Sección: "+seccion+""; 
 
     Eventos.eventosPorFolioArtista(folio_artista, function(resp) {
         document.getElementById("titulo").innerHTML = resp[0].nombre;
