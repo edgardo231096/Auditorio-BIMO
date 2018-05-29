@@ -9,7 +9,7 @@ $(document).ready(function(){
             <tr>
                 <td>${promo.descripcion}</td>
                 
-                <td>${finDate} ${(days > 0)?('(Quedan '+days+' días)'):'<b>(Hoy termina la promocion!)</b>'}</td>
+                <td>${finDate} ${(days > 0)?($(days == 1)?'(<b>Mañana</b> termina la promoción!)':('(Quedan '+days+' día(s))')):'(<b>Hoy</b> termina la promoción!)</b>'}</td>
                 <td> <a href="eventos.html${window.location.search}${queryParams}" class="square_btn">Aplicar</a></td>
             </tr>
             `);

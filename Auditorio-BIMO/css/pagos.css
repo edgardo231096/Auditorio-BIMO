@@ -338,6 +338,10 @@ progress[id="progress3"]::-webkit-progress-value {
   padding: 0px 7px 0px 0px;
   width: 97%; 
 }
+
+::placeholder{
+  color: rgb(80,80,80);
+}
 #area .master-card .card-back .secret-area span {
   float: right;
   margin: 5px;
