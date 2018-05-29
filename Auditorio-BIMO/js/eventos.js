@@ -40,9 +40,9 @@ $(document).ready(function() {
                     <div class="detalles"> 
                     <h4>Lista de precios</h4>
                       <p> 
-                         Seccion A2: $${precios.top}<br> 
-                         Seccion A1 o A3: $${precios.mid}<br> 
-                         Seccion B1 o B2: $${precios.low}<br>
+                         Sección A2: $${precios.top}<br> 
+                         Sección A1 o A3: $${precios.mid}<br> 
+                         Sección B1 o B2: $${precios.low}<br>
                       </p>
                     </div> 
                     
